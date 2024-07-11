@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Evaluating Large Language Models on Vector Graphics Understanding and Generation">
+  <meta name="keywords" content="evaluating large language models on vector graphics understanding and generation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VGBench</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.8.0/gradio.js"></script>
+</head>
+
+<style>
+  .expandable-card .card-text-container {
+    max-height: 200px;
+    overflow-y: hidden;
+    position: relative;
+  }
+
+  .expandable-card.expanded .card-text-container {
+    max-height: none;
+  }
+
+  .expand-btn {
+    position: relative;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* margin-top: -20px; */
+    /* justify-content: center; */
+    color: #510c75;
+    border-color: transparent;
+  }
+
+  .expand-btn:hover {
+    background-color: rgba(200, 200, 200, 0.8);
+    text-decoration: none;
+    border-color: transparent;
+    color: #510c75;
+  }
+
+  .expand-btn:focus {
+    outline: none;
+    text-decoration: none;
+  }
+
+  .expandable-card:not(.expanded) .card-text-container:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1));
+  }
+
+  .expandable-card:not(.expanded) .expand-btn {
+    margin-top: -40px;
+  }
+
+  .card-body {
+    padding-bottom: 5px;
+  }
+
+  .vertical-flex-layout {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .figure-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .adjustable-font-size {
+    font-size: calc(0.5rem + 2vw);
+  }
+
+  .chat-history {
+    flex-grow: 1;
+    overflow-y: auto;
+    /* overflow-x: hidden; */
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+
+  #gradio pre {
+    background-color: transparent;
+  }
+
+.author-block a {
+    color: #008AD7;
+    font-weight: normal;
+}
+
+/* Adjust the vertical alignment and font size of the superscript */
+.author-block a sup {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.3em; /* Adjusts the position slightly above the baseline */
+    right: -0.1em; /* Adjusts the position slightly to the right */
+    font-size: smaller; /* Makes the font size smaller if needed */
+}
+
+
+
+</style>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">VGBench<span class="is-size-2"><span class="is-size-1"></span></h1>
+            <h3 class="title is-2 publication-title">Evaluating Large Language Models on Vector Graphics Understanding and Generation</h3>
+            <h5 class="subtitle is-4 publication-awards">arXiv 2024</h5>
+            <div class="is-size-4 publication-authors">
+
+
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/bocheng-zou/">Bocheng Zou<sup>*</sup></a>,
+              </span>
+
+
+              <span class="author-block">
+                <a href="https://pages.cs.wisc.edu/~mucai/">Mu Cai<sup>*</sup></a>,
+              </span>
+            
+
+              <span class="author-block">
+                <a href="https://pages.cs.wisc.edu/~harrisz">Jianrui Zhang</a>,
+              </span>
+
+            
+              <span class="author-block">
+                <a href="https://pages.cs.wisc.edu/~yongjaelee/" style="color:#008AD7;font-weight:normal;">Yong Jae
+                  Lee</a>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>*</sup>Equal Contribution</span>
+            </div>
+
+
+            <div class="is-size-4 publication-authors">
+              <span class="author-block">University of Wisconsin-Madison</span>
+            </div>
+
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/24xx.xxxxx" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/vgbench/VGBench" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://huggingface.co/vgbench" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h4 class="subtitle has-text-left">
+          🔥<span style="color: #ff3860">[NEW!]</span> We propose <b>VGBench</b>, the first dataset to comprehensively
+          evaluate LLMs' vector graphics processing capabilities.
+          <br><br>
+          🔥<span style="color: #ff3860">[NEW!]</span> We quantatively show that LLMs demonstrate
+          decent vector graphics understanding and generation capabilities in TikZ, Graphviz, and SVGs, with a particular strength in
+          understanding vector graphics code with higher-level semantics.
+          Advanced prompting techniques such as Chain-of-Thought also improves performance.
+          <br><br>
+          🔥<span style="color: #ff3860">[NEW!]</span> Open-source models such as Llama-3-70b shows competitive performance in understanding as compared to GPT-4,
+          while GPT-4 outperforms others in generation.
+        </h4>
+      </div>
+    </div>
+  </section>
+
+  <section class="section"  style="background-color:#efeff081">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              In the realm of vision models, the primary mode of representation is using pixels to rasterize the visual world. Yet this is not always the best or unique way to represent visual content, especially for designers and artists who depict the world using geometry primitives such as polygons. Vector graphics (VG), on the other hand, offer a textual representation of visual content, which can be more concise and powerful for content like cartoons or sketches. Recent studies have shown promising results on processing vector graphics with capable Large Language Models (LLMs). However, such works focus solely on qualitative results, understanding, or a specific type of vector graphics. We propose VGBench, a comprehensive benchmark for LLMs on handling vector graphics through diverse aspects, including (a) both visual understanding and generation, (b) evaluation of various vector graphics formats, (c) diverse question types, (d) wide range of prompting techniques, (e) under multiple LLMs. Evaluating on our collected 4279 understanding and 5845 generation samples, we find that LLMs show strong capability on both aspects while exhibiting less desirable performance on low-level formats (SVG).
+           </p>
+  
+          </div>
+        </div>
+      </div>
+        
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3"> Task Overview: Understanding </h2>
+      </div>
+    </div>
+    <!-- </div> -->
+    <!--/ Results. -->    
+  <div class="container is-max-desktop">
+  
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified"> 
+          <p>
+            In our benchmark, we focus on three different types of vector graphics: SVG, TikZ, and Graphviz.
+            We divide our tasks into two categories: understanding and generation.
+            For understanding, we designed three different question types for each of the vector graphics based on their individual strength.
+          </p>
+        </div>
+        <centering>
+          <div style="text-align: center;">
+            <img id="teaser" src="images/tasks.png">     
+          </div>
+        </centering>  
+      </div>
+  </section>
+
+  <section class="section">
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3"> Task Overview: Generation </h2>
+      </div>
+    </div>
+    <!-- </div> -->
+    <!--/ Results. -->    
+  <div class="container is-max-desktop">
+  
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified"> 
+          <p>
+            First, we obtain captions for each vector graphics image by leveraging GPT-4V over its rasterized image. Then we prompt the LLM to generate the vector graphics code corresponding to the caption.
+            Finally, we map the generated vector graphics into rasterzied images, then use CLIP Score and Fréchet Inception Distance (FID) Score to evaluate the quality of the generated vector graphics.
+            The scores of the ground truth image is used as the upper bound to objectively evaluate the quality of the generated images.
+          </p>
+        </div>
+        <centering>
+          <div style="text-align: center;">
+            <img id="teaser" width="70%" src="images/generation.png">     
+          </div>
+        </centering>  
+      </div>
+  </section>
+
+  <section class="section">
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3"> Data Curation Pipeline </h2>
+      </div>
+    </div>
+    <!-- </div> -->
+    <!--/ Results. -->    
+  <div class="container is-max-desktop">
+  
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="content has-text-justified"> 
+          <p>
+            Vector graphics are converted into PNG format,
+            then GPT-4V is utilized to generate the questions and
+            answers (QA) candidates. Finally, human annotators
+            filter the QA pairs to obtain the high-quality QA dataset.
+          </p>
+        </div>
+        <centering>
+          <div style="text-align: center;">
+            <img id="teaser" width="70%" src="images/curation.png">     
+          </div>
+        </centering>  
+      </div>
+  </section>
+    
+      
+
+
+  
+<section class="section">
+  <!-- Results. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <h2 class="title is-3">QA examples</h2>
+    </div>
+  </div>
+  <!-- </div> -->
+  <!--/ Results. -->    
+<div class="container is-max-desktop">
+
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <div class="content has-text-justified"> 
+        <p>
+          We systematically design a range of tasks based on the nature of each vector graphics category, aiming at a comprehensive evaluation across different semantic levels. For SVG, we design three types of questions: color, category, and usage; for TikZ, we use concept, counting, and relations as types of questions; while for Graphviz, we design layout, domain, and relations. 
+        </p>
+      </div>
+      <centering>
+        <div style="text-align: center;">
+          <img id="teaser" src="images/QA_examples.png">     
+        </div>
+      </centering>  
+    </div>
+    
+  </div>
+
+</section>
+
+
+  
+
+
+<section class="section">
+  <!-- Results. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3515/3515174.png"> Performance</h2>
+    </div>
+  </div>
+
+
+
+  <!-- </div> -->
+  <!--/ Results. -->    
+<div class="container is-max-desktop">
+
+
+  <!-- Grounedtext2img. -->
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-4">Evaluation: Understanding</h2>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <div class="content has-text-justified"> 
+        <p>
+          GPT-4 shows stronger performance in high-level vector graphics language (e.g., TikZ, Graphviz) compared to low-level vector graphics language SVG.
+        </p>
+        <p>
+          Different vector-graphic formats show diverse behaviors upon question types, where the results
+          demonstrates that GPT-4 shows inferior performance in low-level vector graphics tasks, especially on tasks related to reasoning.
+        </p>
+        <p>
+          It can also be seen in our ablation study that GPT-4's performance varies significantly along each vector graphics code range.
+        </p>
+      </div>
+      <div style="text-align: center;">
+        <img id="teaser" width="100%" src="images/qa_results.png"> 
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+  
+
+  <!-- Grounedtext2img. -->
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-4">Evaluation: Generation</h2>
+
+      
+
+      <div>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <div class="content has-text-justified"> 
+        <p>
+          Both GPT-3.5 and GPT-4 show strong vector graphics generation capability. 
+          GPT-4 shows better performance than GPT-3.5 on CLIP score.
+          Qualitative examples including the heart shape and flowchart generation also demonstrate the promising capability of VG generation using LLMs.
+        </p>
+      </div>
+      <div style="text-align: center;">
+
+        <img id="teaser" width="50%" src="images/generation_results.png"> 
+        <img id="teaser" width="100%" src="images/generation_examples.png"> 
+      </div>
+    </div>
+
+
+  </div>
+
+  
+</section>
+
+
+</section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @article{zou2024vgbench,
+          title={VGBench: Evaluating Large Language Models on Vector Graphics Understanding and Generation},
+          author={Zou, Bocheng and Cai, Mu and Zhang, Jianrui and Lee, Yong Jae},
+          journal={arXiv},
+          year={2024}
+        }
+  </code></pre>
+    </div>
+  </section>
+  
+  <section class="section" id="Acknowledgement">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Acknowledgement</h2>
+      <p>
+        This website is adapted from <a
+        href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+        Commons Attribution-ShareAlike 4.0 International License</a>.  We thank the LLaMA team for giving us access to their models, and open-source projects, including Alpaca and Vicuna.
+      </p>
+
+      <p>
+<b>Usage and License Notices</b>: The data, code and checkpoint is intended and licensed for research use only. They are also restricted to uses that follow the license agreement of CLIP, LLaMA, and GPT-4. The dataset is CC BY NC 4.0 (allowing only non-commercial use) and models trained using the dataset should not be used outside of research purposes.
+</p>
+
+      <p>
+      Related Links: 
+      <a href='https://instruction-tuning-with-gpt-4.github.io/'>[Instruction Tuning with GPT-4]</a>      
+      </p>    
+    </div>
+  </section>
+
+
+</body>
+
+</html>
