@@ -208,16 +208,10 @@
     <div class="container is-max-desktop">
       <div class="hero-body">
         <h4 class="subtitle has-text-left">
-          🔥<span style="color: #ff3860">[NEW!]</span> We propose <b>VGBench</b>, the first dataset to comprehensively
-          evaluate LLMs' vector graphics processing capabilities.
+          🔥<span style="color: #ff3860">[NEW!]</span> Our paper <b>LLM as Dataset Analyst: Subpopulation Structure Discovery with Large Language Model</b> got accepted in ECCV 2024.
           <br><br>
-          🔥<span style="color: #ff3860">[NEW!]</span> We quantatively show that LLMs demonstrate
-          decent vector graphics understanding and generation capabilities in TikZ, Graphviz, and SVGs, with a particular strength in
-          understanding vector graphics code with higher-level semantics.
-          Advanced prompting techniques such as Chain-of-Thought also improves performance.
+          🔥<span style="color: #ff3860">[NEW!]</span> We proposed the Subpopulation Structure Discovery with Large Language Models (SSD-LLM) framework, which employs world knowledge and instruction-following capabilities of Large Language Models (LLMs) to linguistically analyze informative image captions and summarize the structures
           <br><br>
-          🔥<span style="color: #ff3860">[NEW!]</span> Open-source models such as Llama-3-70b shows competitive performance in understanding as compared to GPT-4,
-          while GPT-4 outperforms others in generation.
         </h4>
       </div>
     </div>
@@ -231,7 +225,15 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              In the realm of vision models, the primary mode of representation is using pixels to rasterize the visual world. Yet this is not always the best or unique way to represent visual content, especially for designers and artists who depict the world using geometry primitives such as polygons. Vector graphics (VG), on the other hand, offer a textual representation of visual content, which can be more concise and powerful for content like cartoons or sketches. Recent studies have shown promising results on processing vector graphics with capable Large Language Models (LLMs). However, such works focus solely on qualitative results, understanding, or a specific type of vector graphics. We propose VGBench, a comprehensive benchmark for LLMs on handling vector graphics through diverse aspects, including (a) both visual understanding and generation, (b) evaluation of various vector graphics formats, (c) diverse question types, (d) wide range of prompting techniques, (e) under multiple LLMs. Evaluating on our collected 4279 understanding and 5845 generation samples, we find that LLMs show strong capability on both aspects while exhibiting less desirable performance on low-level formats (SVG).
+              The distribution of subpopulations is an important property hidden within a dataset. 
+Uncovering and analyzing the subpopulation distribution within datasets provides a comprehensive understanding of the datasets, standing as a powerful tool beneficial to various downstream tasks, including Dataset Subpopulation Organization, Subpopulation Shift, and Slice Discovery.
+Despite its importance, there has been no work that systematically explores the subpopulation distribution of datasets to our knowledge. 
+To address the limitation and solve all the mentioned tasks in a unified way, we introduce a novel concept of subpopulation structures to represent, analyze, and utilize subpopulation distributions within datasets. 
+To characterize the structures in an interpretable manner, we propose the Subpopulation Structure Discovery with Large Language Models (SSD-LLM) framework, 
+which employs world knowledge and instruction-following capabilities of Large Language Models (LLMs) to linguistically analyze informative image captions and summarize the structures. 
+Furthermore, we propose complete workflows to address downstream tasks, named Task-specific Tuning, showcasing the application of the discovered structure to a spectrum of subpopulation-related tasks, including dataset subpopulation organization, subpopulation shift, and slice discovery. 
+With the help of SSD-LLM, we can structuralize the datasets into subpopulation-level automatically, achieve average +2.5 worst group accuracy gain compared to previous methods on subpopulation shift benchmark Waterbirds and Metashift, and also identify more consistent slice topics with a higher model error rate of 36.44\% on slice discovery task for ImageNet.
+The code will be available at <a href="https://llm-as-dataset-analyst.github.io/">https://llm-as-dataset-analyst.github.io/</a>
            </p>
   
           </div>
