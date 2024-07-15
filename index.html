@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Evaluating Large Language Models on Vector Graphics Understanding and Generation">
-  <meta name="keywords" content="evaluating large language models on vector graphics understanding and generation">
+  <meta name="description" content="LLM as Dataset Analyst">
+  <meta name="keywords" content="Subpopulation Structure Discovery, Large Language Model">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LLM as Dataset Analyst</title>
 
@@ -105,22 +105,22 @@
     background-color: transparent;
   }
 
-.author-block a {
+  .author-block a {
     color: #008AD7;
     font-weight: normal;
-}
+  }
 
-/* Adjust the vertical alignment and font size of the superscript */
-.author-block a sup {
+  /* Adjust the vertical alignment and font size of the superscript */
+  .author-block a sup {
     vertical-align: baseline;
     position: relative;
-    top: -0.3em; /* Adjusts the position slightly above the baseline */
-    right: -0.1em; /* Adjusts the position slightly to the right */
-    font-size: smaller; /* Makes the font size smaller if needed */
-}
-
-
-
+    top: -0.3em;
+    /* Adjusts the position slightly above the baseline */
+    right: -0.1em;
+    /* Adjusts the position slightly to the right */
+    font-size: smaller;
+    /* Makes the font size smaller if needed */
+  }
 </style>
 
 <body>
@@ -131,7 +131,8 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">LLM as Dataset Analyst: Subpopulation Structure Discovery with Large Language Model<span class="is-size-2"><span class="is-size-1"></span></h1>
+            <h1 class="title is-1 publication-title">LLM as Dataset Analyst: Subpopulation Structure Discovery with
+              Large Language Model<span class="is-size-2"><span class="is-size-1"></span></h1>
             <!--<h3 class="title is-2 publication-title">Subpopulation Structure Discovery with Large Language Model</h3>-->
             <h5 class="subtitle is-4 publication-awards">ECCV 2024</h5>
             <div class="is-size-4 publication-authors">
@@ -145,7 +146,7 @@
               <span class="author-block">
                 <a href="">Ruichuan An<sup>2*</sup></a>,
               </span>
-            
+
 
               <span class="author-block">
                 <a href="https://www.linkedin.com/in/bocheng-zou/">Bocheng Zou<sup>3</sup></a>,
@@ -158,7 +159,7 @@
               <span class="author-block">
                 <a href="">Jiaming Liu<sup>1</sup></a>,
               </span>
-            
+
 
               <span class="author-block">
                 <a href="https://www.shanghangzhang.com/"> Shanghang Zhang<sup>1</sup> </a>
@@ -208,16 +209,19 @@
     <div class="container is-max-desktop">
       <div class="hero-body">
         <h4 class="subtitle has-text-left">
-          🔥<span style="color: #ff3860">[NEW!]</span> Our paper <b>LLM as Dataset Analyst: Subpopulation Structure Discovery with Large Language Model</b> got accepted in ECCV 2024.
+          🔥<span style="color: #ff3860">[NEW!]</span> Our paper <b>LLM as Dataset Analyst: Subpopulation Structure
+            Discovery with Large Language Model</b> got accepted in ECCV 2024.
           <br><br>
-          🔥<span style="color: #ff3860">[NEW!]</span> We proposed the Subpopulation Structure Discovery with Large Language Models (SSD-LLM) framework, which employs world knowledge and instruction-following capabilities of Large Language Models (LLMs) to linguistically analyze informative image captions and summarize the structures
+          🔥<span style="color: #ff3860">[NEW!]</span> We proposed the Subpopulation Structure Discovery with Large
+          Language Models (SSD-LLM) framework, which employs world knowledge and instruction-following capabilities of
+          Large Language Models (LLMs) to linguistically analyze informative image captions and summarize the structures
           <br><br>
         </h4>
       </div>
     </div>
   </section>
 
-  <section class="section"  style="background-color:#efeff081">
+  <section class="section" style="background-color:#efeff081">
     <div class="container is-max-desktop">
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
@@ -225,257 +229,196 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              The distribution of subpopulations is an important property hidden within a dataset. 
-Uncovering and analyzing the subpopulation distribution within datasets provides a comprehensive understanding of the datasets, standing as a powerful tool beneficial to various downstream tasks, including Dataset Subpopulation Organization, Subpopulation Shift, and Slice Discovery.
-Despite its importance, there has been no work that systematically explores the subpopulation distribution of datasets to our knowledge. 
-To address the limitation and solve all the mentioned tasks in a unified way, we introduce a novel concept of subpopulation structures to represent, analyze, and utilize subpopulation distributions within datasets. 
-To characterize the structures in an interpretable manner, we propose the Subpopulation Structure Discovery with Large Language Models (SSD-LLM) framework, 
-which employs world knowledge and instruction-following capabilities of Large Language Models (LLMs) to linguistically analyze informative image captions and summarize the structures. 
-Furthermore, we propose complete workflows to address downstream tasks, named Task-specific Tuning, showcasing the application of the discovered structure to a spectrum of subpopulation-related tasks, including dataset subpopulation organization, subpopulation shift, and slice discovery. 
-With the help of SSD-LLM, we can structuralize the datasets into subpopulation-level automatically, achieve average +2.5 worst group accuracy gain compared to previous methods on subpopulation shift benchmark Waterbirds and Metashift, and also identify more consistent slice topics with a higher model error rate of 36.44\% on slice discovery task for ImageNet.
-The code will be available at <a href="https://llm-as-dataset-analyst.github.io/">https://llm-as-dataset-analyst.github.io/</a>
-           </p>
-  
+              The distribution of subpopulations is an important property hidden within a dataset.
+              Uncovering and analyzing the subpopulation distribution within datasets provides a comprehensive
+              understanding of the datasets, standing as a powerful tool beneficial to various downstream tasks,
+              including Dataset Subpopulation Organization, Subpopulation Shift, and Slice Discovery.
+              Despite its importance, there has been no work that systematically explores the subpopulation distribution
+              of datasets to our knowledge.
+              To address the limitation and solve all the mentioned tasks in a unified way, we introduce a novel concept
+              of subpopulation structures to represent, analyze, and utilize subpopulation distributions within
+              datasets.
+              To characterize the structures in an interpretable manner, we propose the Subpopulation Structure
+              Discovery with Large Language Models (SSD-LLM) framework,
+              which employs world knowledge and instruction-following capabilities of Large Language Models (LLMs) to
+              linguistically analyze informative image captions and summarize the structures.
+              Furthermore, we propose complete workflows to address downstream tasks, named Task-specific Tuning,
+              showcasing the application of the discovered structure to a spectrum of subpopulation-related tasks,
+              including dataset subpopulation organization, subpopulation shift, and slice discovery.
+              With the help of SSD-LLM, we can structuralize the datasets into subpopulation-level automatically,
+              achieve average +2.5 worst group accuracy gain compared to previous methods on subpopulation shift
+              benchmark Waterbirds and Metashift, and also identify more consistent slice topics with a higher model
+              error rate of 36.44\% on slice discovery task for ImageNet.
+              The code will be available at <a
+                href="https://llm-as-dataset-analyst.github.io/">https://llm-as-dataset-analyst.github.io/</a>
+            </p>
+
           </div>
         </div>
       </div>
-        
+
     </div>
-  </section>
-
-
-
-  <section class="section">
-    <!-- Results. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-        <h2 class="title is-3"> Task Overview: Understanding </h2>
-      </div>
-    </div>
-    <!-- </div> -->
-    <!--/ Results. -->    
-  <div class="container is-max-desktop">
-  
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <div class="content has-text-justified"> 
-          <p>
-            In our benchmark, we focus on three different types of vector graphics: SVG, TikZ, and Graphviz.
-            We divide our tasks into two categories: understanding and generation.
-            For understanding, we designed three different question types for each of the vector graphics based on their individual strength.
-          </p>
-        </div>
-        <centering>
-          <div style="text-align: center;">
-            <img id="teaser" src="images/tasks.png">     
-          </div>
-        </centering>  
-      </div>
   </section>
 
   <section class="section">
     <!-- Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
-        <h2 class="title is-3"> Task Overview: Generation </h2>
+        <h2 class="title is-3"> Introduction </h2>
       </div>
     </div>
     <!-- </div> -->
-    <!--/ Results. -->    
-  <div class="container is-max-desktop">
-  
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <div class="content has-text-justified"> 
-          <p>
-            First, we obtain captions for each vector graphics image by leveraging GPT-4V over its rasterized image. Then we prompt the LLM to generate the vector graphics code corresponding to the caption.
-            Finally, we map the generated vector graphics into rasterzied images, then use CLIP Score and Fréchet Inception Distance (FID) Score to evaluate the quality of the generated vector graphics.
-            The scores of the ground truth image is used as the upper bound to objectively evaluate the quality of the generated images.
-          </p>
-        </div>
-        <centering>
-          <div style="text-align: center;">
-            <img id="teaser" width="70%" src="images/generation.png">     
+    <!--/ Results. -->
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <p>
+              In our benchmark, we focus on three different types of vector graphics: SVG, TikZ, and Graphviz.
+              We divide our tasks into two categories: understanding and generation.
+              For understanding, we designed three different question types for each of the vector graphics based on
+              their individual strength.
+            </p>
           </div>
-        </centering>  
+          <centering>
+            <div style="text-align: center;">
+              <img id="teaser" src="images/tasks.png">
+            </div>
+          </centering>
+        </div>
+  </section>
+
+
+  <section class="section">
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3"> Task Overview: Dataset Subpopulation Organization </h2>
       </div>
+    </div>
+    <!-- </div> -->
+    <!--/ Results. -->
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <p>
+              In our benchmark, we focus on three different types of vector graphics: SVG, TikZ, and Graphviz.
+              We divide our tasks into two categories: understanding and generation.
+              For understanding, we designed three different question types for each of the vector graphics based on
+              their individual strength.
+            </p>
+          </div>
+          <centering>
+            <div style="text-align: center;">
+              <img id="teaser" src="images/tasks.png">
+            </div>
+          </centering>
+        </div>
   </section>
 
   <section class="section">
     <!-- Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
-        <h2 class="title is-3"> Data Curation Pipeline </h2>
+        <h2 class="title is-3"> Task Overview: Subpopulation Shift </h2>
       </div>
     </div>
     <!-- </div> -->
-    <!--/ Results. -->    
-  <div class="container is-max-desktop">
-  
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <div class="content has-text-justified"> 
-          <p>
-            Vector graphics are converted into PNG format,
-            then GPT-4V is utilized to generate the questions and
-            answers (QA) candidates. Finally, human annotators
-            filter the QA pairs to obtain the high-quality QA dataset.
-          </p>
-        </div>
-        <centering>
-          <div style="text-align: center;">
-            <img id="teaser" width="70%" src="images/curation.png">     
+    <!--/ Results. -->
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <p>
+              First, we obtain captions for each vector graphics image by leveraging GPT-4V over its rasterized image.
+              Then we prompt the LLM to generate the vector graphics code corresponding to the caption.
+              Finally, we map the generated vector graphics into rasterzied images, then use CLIP Score and Fréchet
+              Inception Distance (FID) Score to evaluate the quality of the generated vector graphics.
+              The scores of the ground truth image is used as the upper bound to objectively evaluate the quality of the
+              generated images.
+            </p>
           </div>
-        </centering>  
-      </div>
-  </section>
-    
-      
-
-
-  
-<section class="section">
-  <!-- Results. -->
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-six-fifths">
-      <h2 class="title is-3">QA examples</h2>
-    </div>
-  </div>
-  <!-- </div> -->
-  <!--/ Results. -->    
-<div class="container is-max-desktop">
-
-  <div class="columns is-centered">
-    <div class="column is-full-width">
-      <div class="content has-text-justified"> 
-        <p>
-          We systematically design a range of tasks based on the nature of each vector graphics category, aiming at a comprehensive evaluation across different semantic levels. For SVG, we design three types of questions: color, category, and usage; for TikZ, we use concept, counting, and relations as types of questions; while for Graphviz, we design layout, domain, and relations. 
-        </p>
-      </div>
-      <centering>
-        <div style="text-align: center;">
-          <img id="teaser" src="images/QA_examples.png">     
+          <centering>
+            <div style="text-align: center;">
+              <img id="teaser" width="70%" src="images/generation.png">
+            </div>
+          </centering>
         </div>
-      </centering>  
-    </div>
-    
-  </div>
+  </section>
 
-</section>
-
-
-  
-
-
-<section class="section">
-  <!-- Results. -->
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-six-fifths">
-      <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3515/3515174.png"> Performance</h2>
-    </div>
-  </div>
-
-
-
-  <!-- </div> -->
-  <!--/ Results. -->    
-<div class="container is-max-desktop">
-
-
-  <!-- Grounedtext2img. -->
-  <div class="columns is-centered">
-    <div class="column is-full-width">
-      <h2 class="title is-4">Evaluation: Understanding</h2>
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <div class="content has-text-justified"> 
-        <p>
-          GPT-4 shows stronger performance in high-level vector graphics language (e.g., TikZ, Graphviz) compared to low-level vector graphics language SVG.
-        </p>
-        <p>
-          Different vector-graphic formats show diverse behaviors upon question types, where the results
-          demonstrates that GPT-4 shows inferior performance in low-level vector graphics tasks, especially on tasks related to reasoning.
-        </p>
-        <p>
-          It can also be seen in our ablation study that GPT-4's performance varies significantly along each vector graphics code range.
-        </p>
-      </div>
-      <div style="text-align: center;">
-        <img id="teaser" width="100%" src="images/qa_results.png"> 
-
-      </div>
-
-    </div>
-  </div>
-
-
-
-  
-
-  <!-- Grounedtext2img. -->
-  <div class="columns is-centered">
-    <div class="column is-full-width">
-      <h2 class="title is-4">Evaluation: Generation</h2>
-
-      
-
-      <div>
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <div class="content has-text-justified"> 
-        <p>
-          Both GPT-3.5 and GPT-4 show strong vector graphics generation capability. 
-          GPT-4 shows better performance than GPT-3.5 on CLIP score.
-          Qualitative examples including the heart shape and flowchart generation also demonstrate the promising capability of VG generation using LLMs.
-        </p>
-      </div>
-      <div style="text-align: center;">
-
-        <img id="teaser" width="50%" src="images/generation_results.png"> 
-        <img id="teaser" width="100%" src="images/generation_examples.png"> 
+  <section class="section">
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3"> Task Overview: Slice Discovery </h2>
       </div>
     </div>
+    <!-- </div> -->
+    <!--/ Results. -->
+    <div class="container is-max-desktop">
 
-
-  </div>
-
-  
-</section>
-
-
-</section>
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <p>
+              Vector graphics are converted into PNG format,
+              then GPT-4V is utilized to generate the questions and
+              answers (QA) candidates. Finally, human annotators
+              filter the QA pairs to obtain the high-quality QA dataset.
+            </p>
+          </div>
+          <centering>
+            <div style="text-align: center;">
+              <img id="teaser" width="70%" src="images/curation.png">
+            </div>
+          </centering>
+        </div>
+  </section>
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>
-        @article{zou2024vgbench,
-          title={VGBench: Evaluating Large Language Models on Vector Graphics Understanding and Generation},
-          author={Zou, Bocheng and Cai, Mu and Zhang, Jianrui and Lee, Yong Jae},
-          journal={arXiv},
-          year={2024}
-        }
-  </code></pre>
+      <pre>
+        <code>
+          @misc{luo2024llmdatasetanalystsubpopulation,
+            title={LLM as Dataset Analyst: Subpopulation Structure Discovery with Large Language Model}, 
+            author={Yulin Luo and Ruichuan An and Bocheng Zou and Yiming Tang and Jiaming Liu and Shanghang Zhang},
+            year={2024},
+            eprint={2405.02363},
+            archivePrefix={arXiv},
+            primaryClass={cs.CV},
+            url={https://arxiv.org/abs/2405.02363}, 
+          }
+      </code>
+    </pre>
     </div>
   </section>
-  
+
   <section class="section" id="Acknowledgement">
     <div class="container is-max-desktop content">
       <h2 class="title">Acknowledgement</h2>
       <p>
-        This website is adapted from <a
-        href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-        Commons Attribution-ShareAlike 4.0 International License</a>.  We thank the LLaMA team for giving us access to their models, and open-source projects, including Alpaca and Vicuna.
+        This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under
+        a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+          Commons Attribution-ShareAlike 4.0 International License</a>. We thank the LLaMA team for giving us access to
+        their models, and open-source projects, including Alpaca and Vicuna.
       </p>
 
       <p>
-<b>Usage and License Notices</b>: The data, code and checkpoint is intended and licensed for research use only. They are also restricted to uses that follow the license agreement of CLIP, LLaMA, and GPT-4. The dataset is CC BY NC 4.0 (allowing only non-commercial use) and models trained using the dataset should not be used outside of research purposes.
-</p>
+        <b>Usage and License Notices</b>: The data, code and checkpoint is intended and licensed for research use only.
+        They are also restricted to uses that follow the license agreement of CLIP, LLaMA, and GPT-4. The dataset is CC
+        BY NC 4.0 (allowing only non-commercial use) and models trained using the dataset should not be used outside of
+        research purposes.
+      </p>
 
       <p>
-      Related Links: 
-      <a href='https://instruction-tuning-with-gpt-4.github.io/'>[Instruction Tuning with GPT-4]</a>      
-      </p>    
+        Related Links:
+        <a href='https://instruction-tuning-with-gpt-4.github.io/'>[Instruction Tuning with GPT-4]</a>
+      </p>
     </div>
   </section>
 
