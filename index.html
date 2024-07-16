@@ -37,7 +37,11 @@
           const origin_height = parseFloat(e.getAttribute("pdf-height"));
           const scale = target_width / origin_width;
           e.style.transform = `scale(${scale}, ${scale})`; 
-          e.style.transformOrigin = "left top";
+          if (scale > 1){
+            e.style.transformOrigin = "center top";
+          }else{
+            e.style.transformOrigin = "left top";
+          }
           e.style.width = origin_width*scale + "px"; 
           e.style.height = origin_height*scale + "px";
       }
