@@ -331,7 +331,7 @@
     <!-- Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
-        <h2 class="title is-3"> Task Overview: Dataset Subpopulation Organization </h2>
+        <h2 class="title is-3"> Dataset Subpopulation Organization </h2>
       </div>
     </div>
     <!-- </div> -->
@@ -342,17 +342,17 @@
         <div class="column is-full-width">
           <div class="content has-text-justified">
             <p>
-              In our benchmark, we focus on three different types of vector graphics: SVG, TikZ, and Graphviz.
-              We divide our tasks into two categories: understanding and generation.
-              For understanding, we designed three different question types for each of the vector graphics based on
-              their individual strength.
+              There are several advantages to organizing subpopulations within a dataset. It provides information about the numbers of data points in each subpopulation and can reflect dataset biases and help us identify some long-tail subgroups. Recent research suggests that creating hierarchical datasets with additional image attributes is beneficial for building more complex benchmarks. However, organizing subpopulations for such tasks currently requires significant manual effort.
+            </p>
+            <p>
+              Our method, SSD-LLM, automates subpopulation organization within datasets, and thus holds the potential to revolutionize the way hierarchical datasets are constructed.
             </p>
           </div>
-          <centering>
+          <!--<centering>
             <div style="text-align: center;">
               <img id="teaser" src="images/tasks.png">
             </div>
-          </centering>
+          </centering>-->
         </div>
   </section>
 
@@ -360,7 +360,7 @@
     <!-- Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
-        <h2 class="title is-3"> Task Overview: Subpopulation Shift </h2>
+        <h2 class="title is-3"> Subpopulation Shift </h2>
       </div>
     </div>
     <!-- </div> -->
@@ -371,19 +371,17 @@
         <div class="column is-full-width">
           <div class="content has-text-justified">
             <p>
-              First, we obtain captions for each vector graphics image by leveraging GPT-4V over its rasterized image.
-              Then we prompt the LLM to generate the vector graphics code corresponding to the caption.
-              Finally, we map the generated vector graphics into rasterzied images, then use CLIP Score and Fréchet
-              Inception Distance (FID) Score to evaluate the quality of the generated vector graphics.
-              The scores of the ground truth image is used as the upper bound to objectively evaluate the quality of the
-              generated images.
+              Subpopulation shift, a common challenge in machine learning, occurs when the proportion of some subpopulations between training and deployment changes. Previous work have shown that subpopulation shifts can cause significant drops to model performances, necessitating the need for methods that can handle subpopulation shifts.
+            </p>
+            <p>
+              SSD-LLM, combined with image generation, offers a solution to better handle the scenarios of subpopulation shifts. In our experiments, after we apply SSD-LLM to the datasets, we statistics the number of images contained in each subpopulation and utilize diffusion model to generate images for underrepresented subpopulations, which helps to achieve balanced classes and attributes. Specifically, we randomly sample attributes from the subpopulation structure for each class and employ LLM to make complete sentences based on these words as the input prompt of the diffusion model.
             </p>
           </div>
-          <centering>
+          <!-- <centering>
             <div style="text-align: center;">
               <img id="teaser" width="70%" src="images/generation.png">
             </div>
-          </centering>
+          </centering> -->
         </div>
   </section>
 
@@ -391,7 +389,7 @@
     <!-- Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
-        <h2 class="title is-3"> Task Overview: Slice Discovery </h2>
+        <h2 class="title is-3"> Slice Discovery </h2>
       </div>
     </div>
     <!-- </div> -->
@@ -402,17 +400,18 @@
         <div class="column is-full-width">
           <div class="content has-text-justified">
             <p>
-              Vector graphics are converted into PNG format,
-              then GPT-4V is utilized to generate the questions and
-              answers (QA) candidates. Finally, human annotators
-              filter the QA pairs to obtain the high-quality QA dataset.
+              Slice discovery is a task aiming at uncovering subpopulations within a dataset where a machine learning model consistently exhibits poor performances. 
+              These subpopulations with underperformances, or slices, provide valuable insights into the model's limitations and potential biases.
+            </p>
+            <p>
+              By identifying slices, researchers can gain a deeper understanding of where the models underperform and provide information about how to improve the model's performance in these challenging subpopulations.
             </p>
           </div>
-          <centering>
+          <!-- <centering>
             <div style="text-align: center;">
               <img id="teaser" width="70%" src="images/curation.png">
             </div>
-          </centering>
+          </centering> -->
         </div>
   </section>
 
