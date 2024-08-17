@@ -1,0 +1,67 @@
+/*! 
+ * Base CSS for pdf2htmlEX
+ * Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com> 
+ * https://github.com/pdf2htmlEX/pdf2htmlEX/blob/master/share/LICENSE
+ */#sidebar{position:absolute;top:0;left:0;bottom:0;width:250px;padding:0;margin:0;overflow:auto}#page-container{position:absolute;top:0;left:0;margin:0;padding:0;border:0}@media screen{#sidebar.opened+#page-container{left:250px}#page-container{bottom:0;right:0;overflow:auto}.loading-indicator{display:none}.loading-indicator.active{display:block;position:absolute;width:64px;height:64px;top:50%;left:50%;margin-top:-32px;margin-left:-32px}.loading-indicator img{position:absolute;top:0;left:0;bottom:0;right:0}}@media print{@page{margin:0}html{margin:0}body{margin:0;-webkit-print-color-adjust:exact}#sidebar{display:none}#page-container{width:auto;height:auto;overflow:visible;background-color:transparent}.p1p3-d{display:none}}.p1p3-pf{position:relative;background-color:white;overflow:hidden;margin:0;border:0}.p1p3-pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0;-ms-transform-origin:0 0;-webkit-transform-origin:0 0}.p1p3-pc.opened{display:block}.p1p3-bf{position:absolute;border:0;margin:0;top:0;bottom:0;width:100%;height:100%;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}.p1p3-bi{position:absolute;border:0;margin:0;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}@media print{.p1p3-pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}@-moz-document url-prefix(){.p1p3-pf{overflow:visible;border:1px solid #fff}.p1p3-pc{overflow:visible}}}.p1p3-c{position:absolute;border:0;padding:0;margin:0;overflow:hidden;display:block}.p1p3-t{position:absolute;white-space:pre;font-size:1px;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%;unicode-bidi:bidi-override;-moz-font-feature-settings:"liga" 0}.p1p3-t:after{content:''}.p1p3-t:before{content:'';display:inline-block}.p1p3-t span{position:relative;unicode-bidi:bidi-override}.p1p3_{display:inline-block;color:transparent;z-index:-1}::selection{background:rgba(127,255,255,0.4)}::-moz-selection{background:rgba(127,255,255,0.4)}.p1p3-pi{display:none}.p1p3-d{position:absolute;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%}.p1p3-it{border:0;background-color:rgba(255,255,255,0.0)}.p1p3-ir:hover{cursor:pointer}
+
+ .p1p3-ff0{font-family:sans-serif;visibility:hidden;}
+@font-face{font-family:p1p3-ff1;src:url(../fonts/p1p3_f1.woff)format("woff");}.p1p3-ff1{font-family:p1p3-ff1;line-height:0.938477;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:p1p3-ff2;src:url(../fonts/p1p3_f2.woff)format("woff");}.p1p3-ff2{font-family:p1p3-ff2;line-height:0.727539;font-style:normal;font-weight:normal;visibility:visible;}
+.p1p3-m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
+.p1p3-v0{vertical-align:0.000000px;}
+.p1p3-ls4{letter-spacing:-0.384873px;}
+.p1p3-ls1{letter-spacing:-0.372044px;}
+.p1p3-ls2{letter-spacing:-0.141120px;}
+.p1p3-ls0{letter-spacing:-0.128291px;}
+.p1p3-ls3{letter-spacing:-0.064145px;}
+.p1p3-scp1p3_{text-shadow:none;}
+.p1p3-sc0{text-shadow:-0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em  transparent;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.p1p3-scp1p3_{-webkit-text-stroke:0px transparent;}
+.p1p3-sc0{-webkit-text-stroke:0.015em transparent;text-shadow:none;}
+}
+.p1p3-ws0{word-spacing:0.000000px;}
+.p1p3_1{margin-left:-1.026327px;}
+.p1p3_2{width:664.799624px;}
+.p1p3_0{width:749.820093px;}
+.p1p3_3{width:790.654114px;}
+.p1p3-fc0{color:rgb(0,0,0);}
+.p1p3-fs0{font-size:128.290898px;}
+.p1p3-y0{bottom:0.000000px;}
+.p1p3-y2{bottom:161.927303px;}
+.p1p3-y1{bottom:214.727303px;}
+.p1p3-y3{bottom:349.999993px;}
+.p1p3-h2{height:91.833231px;}
+.p1p3-h1{height:93.399282px;}
+.p1p3-h0{height:398.000000px;}
+.p1p3-w0{width:1535.000000px;}
+.p1p3-x0{left:0.000000px;}
+.p1p3-x1{left:50.323680px;}
+.p1p3-x2{left:68.133680px;}
+.p1p3-x3{left:329.007600px;}
+@media print{
+.p1p3-v0{vertical-align:0.000000pt;}
+.p1p3-ls4{letter-spacing:-0.513164pt;}
+.p1p3-ls1{letter-spacing:-0.496058pt;}
+.p1p3-ls2{letter-spacing:-0.188160pt;}
+.p1p3-ls0{letter-spacing:-0.171055pt;}
+.p1p3-ls3{letter-spacing:-0.085527pt;}
+.p1p3-ws0{word-spacing:0.000000pt;}
+.p1p3_1{margin-left:-1.368436pt;}
+.p1p3_2{width:886.399498pt;}
+.p1p3_0{width:999.760124pt;}
+.p1p3_3{width:1054.205485pt;}
+.p1p3-fs0{font-size:171.054531pt;}
+.p1p3-y0{bottom:0.000000pt;}
+.p1p3-y2{bottom:215.903071pt;}
+.p1p3-y1{bottom:286.303071pt;}
+.p1p3-y3{bottom:466.666658pt;}
+.p1p3-h2{height:122.444308pt;}
+.p1p3-h1{height:124.532376pt;}
+.p1p3-h0{height:530.666667pt;}
+.p1p3-w0{width:2046.666667pt;}
+.p1p3-x0{left:0.000000pt;}
+.p1p3-x1{left:67.098240pt;}
+.p1p3-x2{left:90.844907pt;}
+.p1p3-x3{left:438.676800pt;}
+}

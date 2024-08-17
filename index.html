@@ -7,10 +7,12 @@
   <meta name="keywords" content="Subpopulation Structure Discovery, Large Language Model">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LLM as Dataset Analyst</title>
-
-  <link rel="stylesheet" href="styles/pdf2htmlEX_base.min.css" />
-  <link rel="stylesheet" href="styles/pdf2htmlEX_fancy.min.css" />
-  <link rel="stylesheet" href="styles/intro_v5.css" />
+  <link rel="stylesheet" href="styles/p1p1.css" />
+  <link rel="stylesheet" href="styles/p1p2.css" />
+  <link rel="stylesheet" href="styles/p1p3.css" />
+  <link rel="stylesheet" href="styles/p2.css" />
+  <link rel="stylesheet" href="styles/p3.css" />
+  <link rel="stylesheet" href="styles/p4.css" />
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
@@ -26,30 +28,30 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
   <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.8.0/gradio.js"></script>
   <script>
-    function resize_pdf(){
+    function resize_pdf() {
       const ref_element = document.querySelectorAll('.container.is-max-desktop')[0];
       const ref_style = window.getComputedStyle(ref_element);
       const target_width = ref_element.clientWidth - parseFloat(ref_style.paddingLeft) - parseFloat(ref_style.paddingRight);
       const resizing_elements = document.getElementsByClassName("auto-resize-pdf")
       for (let i = 0; i < resizing_elements.length; i++) {
-          let e = resizing_elements[i];
-          const origin_width = parseFloat(e.getAttribute("pdf-width"));
-          const origin_height = parseFloat(e.getAttribute("pdf-height"));
-          const scale = target_width / origin_width;
-          e.style.transform = `scale(${scale}, ${scale})`; 
-          if (scale > 1){
-            e.style.transformOrigin = "center top";
-          }else{
-            e.style.transformOrigin = "left top";
-          }
-          e.style.width = origin_width*scale + "px"; 
-          e.style.height = origin_height*scale + "px";
+        let e = resizing_elements[i];
+        const origin_width = parseFloat(e.getAttribute("ori-width"));
+        const origin_height = parseFloat(e.getAttribute("ori-height"));
+        const scale = target_width / origin_width;
+        e.style.transform = `scale(${scale}, ${scale})`;
+        if (scale > 1) {
+          e.style.transformOrigin = "center top";
+        } else {
+          e.style.transformOrigin = "left top";
+        }
+        e.style.width = origin_width * scale + "px";
+        e.style.height = origin_height * scale + "px";
       }
     }
-    window.onresize = function(event) {
+    window.onresize = function (event) {
       resize_pdf()
     };
-    window.onload = function(event) {
+    window.onload = function (event) {
       resize_pdf()
     }
   </script>
@@ -166,7 +168,7 @@
             <h1 class="title is-1 publication-title">LLM as Dataset Analyst: Subpopulation Structure Discovery with
               Large Language Model<span class="is-size-2"><span class="is-size-1"></span></h1>
             <!--<h3 class="title is-2 publication-title">Subpopulation Structure Discovery with Large Language Model</h3>-->
-            <h5 class="subtitle is-4 publication-awards">ECCV 2024</h5>
+            <h5 class="subtitle is-4 publication-awards">ECCV 2024 Poster</h5>
             <div class="is-size-4 publication-authors">
 
 
@@ -255,6 +257,37 @@
     </div>
   </section>
 
+  <section class="section">
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3"> Takeways </h2>
+      </div>
+    </div>
+    <!-- </div> -->
+    <!--/ Results. -->
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <p>
+              1. Large language models can be served as <font style="color:#ff0000; font-weight: bold;"> dataset
+                analysts </font>. We can utilize their extensive world knowledge and summarization capabilities to
+              extract valuable insights from massive information, which can be beneficial to model training.
+            </p>
+            <p>
+              2. We propose the concept of <font style="color:#ff0000; font-weight: bold;"> subpopulation structure
+              </font> to represent, analyze, and utilize subpopulation distributions within datasets. This concept is
+              crucial for solving a spectrum of subpopulation-related tasks, including dataset subpopulation
+              organization, subpopulation shift, and slice discovery.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" style="background-color:#efeff081">
     <div class="container is-max-desktop">
       <!-- Abstract. -->
@@ -263,32 +296,32 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              <p>
-                The distribution of subpopulations is an important property hidden within a dataset.
-                Uncovering and analyzing the subpopulation distribution within datasets provides a comprehensive
-                understanding of the datasets, standing as a powerful tool beneficial to various downstream tasks,
-                including Dataset Subpopulation Organization, Subpopulation Shift, and Slice Discovery.
-                Despite its importance, there has been no work that systematically explores the subpopulation distribution
-                of datasets to our knowledge.
-              </p>
-              <p>
-                To address the limitation and solve all the mentioned tasks in a unified way, we introduce a novel concept
-                of subpopulation structures to represent, analyze, and utilize subpopulation distributions within
-                datasets.
-                To characterize the structures in an interpretable manner, we propose the Subpopulation Structure
-                Discovery with Large Language Models (SSD-LLM) framework,
-                which employs world knowledge and instruction-following capabilities of Large Language Models (LLMs) to
-                linguistically analyze informative image captions and summarize the structures.
-                Furthermore, we propose complete workflows to address downstream tasks, named Task-specific Tuning,
-                showcasing the application of the discovered structure to a spectrum of subpopulation-related tasks,
-                including dataset subpopulation organization, subpopulation shift, and slice discovery.
-              </p>
-              <p>
-                With the help of SSD-LLM, we can structuralize the datasets into subpopulation-level automatically, 
-                achieve average +3.3% worst group accuracy gain compared to previous methods on subpopulation 
-                shift benchmark Waterbirds, Metashift and Nico++, and also identify more consistent slice topics 
-                with a higher model error rate of 3.95% on slice discovery task for ImageNet.
-              </p>
+            <p>
+              The distribution of subpopulations is an important property hidden within a dataset.
+              Uncovering and analyzing the subpopulation distribution within datasets provides a comprehensive
+              understanding of the datasets, standing as a powerful tool beneficial to various downstream tasks,
+              including Dataset Subpopulation Organization, Subpopulation Shift, and Slice Discovery.
+              Despite its importance, there has been no work that systematically explores the subpopulation distribution
+              of datasets to our knowledge.
+            </p>
+            <p>
+              To address the limitation and solve all the mentioned tasks in a unified way, we introduce a novel concept
+              of subpopulation structures to represent, analyze, and utilize subpopulation distributions within
+              datasets.
+              To characterize the structures in an interpretable manner, we propose the Subpopulation Structure
+              Discovery with Large Language Models (SSD-LLM) framework,
+              which employs world knowledge and instruction-following capabilities of Large Language Models (LLMs) to
+              linguistically analyze informative image captions and summarize the structures.
+              Furthermore, we propose complete workflows to address downstream tasks, named Task-specific Tuning,
+              showcasing the application of the discovered structure to a spectrum of subpopulation-related tasks,
+              including dataset subpopulation organization, subpopulation shift, and slice discovery.
+            </p>
+            <p>
+              With the help of SSD-LLM, we can structuralize the datasets into subpopulation-level automatically,
+              achieve average +3.3% worst group accuracy gain compared to previous methods on subpopulation
+              shift benchmark Waterbirds, Metashift and Nico++, and also identify more consistent slice topics
+              with a higher model error rate of 3.95% on slice discovery task for ImageNet.
+            </p>
             </p>
 
           </div>
@@ -312,108 +345,282 @@
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
+            <h3>
+              What's the subpopulation?
+            </h3>
             <p>
-              We proposed a novel framework <b>Subpopulation Structure Discovery with Large Language Model (SSD-LLM)</b> 
-              to automatically uncover the structure. The core idea is to generate informative captions from images with MLLM, 
-              followed by analyzing and summarizing the subpopulation structure of datasets with LLM.
+              Subpopulation is defined by a set of data points that share common characteristics. [2]
+              For example, for class "Cat", the black cat and the white cat can be seen as different subpopulation.
+            </p>
+            <h3>
+              Why is subpopulation an important concept in machine learning?
+            </h3>
+            <p>
+              Because many tasks are subpopulation-related. For example,
+            </p>
+            <p>
+              With the help of SSD-LLM, we can structuralize the datasets into subpopulation-level automatically,
+              achieve average +3.3% worst group accuracy gain compared to previous methods on subpopulation shift
+              benchmark Waterbirds, Metashift and Nico++, and also identify more consistent slice topics with a higher
+              model error rate of 3.95% on slice discovery task for ImageNet.With the help of SSD-LLM, we can
+              structuralize the datasets into subpopulation-level automatically, achieve average +3.3% worst group
+              accuracy gain compared to previous methods on subpopulation shift benchmark Waterbirds, Metashift and
+              Nico++, and also identify more consistent slice topics with a higher model error rate of 3.95% on slice
+              discovery task for ImageNet.Image clustering conditioned on text criteria [1] is to partition an image
+              dataset into different subpopulations based on user-specified criteria。
             </p>
           </div>
         </div>
       </div>
-      <div class="auto-resize-pdf" pdf-width="708.6" pdf-height="402.48">
-        <div id="pf1" class="pf w0 h0" data-page-no="1"><div class="pc pc1 w0 h0"><img class="bi x0 y0 w1 p_h1" alt="" src="images/bg1.png"/><div class="c x0 y1 w2 h0"><div class="t m0 x1 p_h2 y2 ff1 fs0 fc0 sc0 ls0 ws0">Dimension</div><div class="t m0 x2 p_h2 y3 ff1 fs0 fc0 sc0 ls0 ws0">Class</div><div class="t m0 x3 p_h2 y4 ff1 fs0 fc0 sc0 ls0 ws0">Attribute</div><div class="t m0 x4 p_h3 y5 ff1 fs1 fc0 sc0 ls0 ws0">action</div><div class="t m0 x5 p_h4 y6 ff1 fs2 fc0 sc0 ls1 ws0">dog</div><div class="t m0 x6 p_h3 y7 ff1 fs1 fc0 sc0 ls0 ws0">background<span class="_ _0"> </span>object</div><div class="t m0 x7 p_h5 y8 ff2 fs3 fc0 sc0 ls0 ws0">Subpopu<span class="_ _1"></span>lation St<span class="_ _1"></span>ructure</div><div class="t m0 x8 p_h3 y9 ff1 fs1 fc0 sc0 ls0 ws0">surf</div><div class="t m0 x9 p_h3 ya ff1 fs1 fc0 sc0 ls0 ws0">sit<span class="_ _2"> </span>walk<span class="_ _3"> </span>water</div><div class="t m0 xa p_h3 yb ff1 fs1 fc0 sc0 ls0 ws0">snow</div><div class="t m0 xb p_h3 ya ff1 fs1 fc0 sc0 ls0 ws0">grass</div><div class="t m0 xc p_h3 yc ff1 fs1 fc0 sc0 ls0 ws0">beach</div><div class="t m0 xd p_h3 ya ff1 fs1 fc0 sc0 ls0 ws0">frisbee</div><div class="t m0 xe p_h3 yc ff1 fs1 fc0 sc0 ls0 ws0">house</div><div class="t m0 xf p_h6 yd ff2 fs0 fc0 sc0 ls0 ws0">Subpopulations</div><div class="t m0 x10 p_h7 ye ff3 fs4 fc0 sc1 ls2 ws0">SSD<span class="ls0">-<span class="_ _4"></span>LL<span class="_ _4"></span>M</span></div><div class="t m0 x11 p_h8 yf ff3 fs5 fc0 sc1 ls0 ws0">Down<span class="_ _4"></span>str<span class="_ _4"></span>ea<span class="_ _4"></span>m </div><div class="t m0 x12 p_h8 y10 ff3 fs5 fc0 sc1 ls0 ws0">Task<span class="_ _4"></span>s</div><div class="t m0 x13 p_h9 y11 ff2 fs6 fc0 sc0 ls0 ws0">(A) SSD with <span class="_ _4"></span>LLM</div><div class="t m0 x14 ha y12 ff2 fs7 fc0 sc0 ls0 ws0">Dataset</div><div class="t m0 x3 hb y13 ff2 fs2 fc0 sc0 ls0 ws0">Criteria</div><div class="t m0 x15 hc y14 ff2 fs8 fc0 sc0 ls0 ws0">(C) Subpopulation Shift</div><div class="t m0 x16 p_h2 y15 ff1 fs0 fc0 sc0 ls0 ws0">Better L<span class="_ _4"></span>ong-tail <span class="_ _5"></span>Performance</div><div class="t m0 x17 p_h2 y16 ff1 fs0 fc0 sc0 ls0 ws0">Density</div><div class="t m0 xf p_h2 y17 ff1 fs0 fc0 sc0 ls3 ws0">SSD<span class="ls0">-L<span class="_ _4"></span>L<span class="_ _4"></span>M <span class="_ _1"></span> +</span></div><div class="t m0 xf p_h2 y18 ff1 fs0 fc0 sc0 ls0 ws0">Imag<span class="_ _4"></span>e Generation</div><div class="t m1 x18 p_h2 y19 ff1 fs0 fc0 sc0 ls0 ws0">Accuracy</div><div class="t m0 x19 p_h4 y1a ff1 fs2 fc0 sc0 ls0 ws0">sit</div><div class="t m0 x1a p_h4 y1b ff1 fs2 fc0 sc0 ls0 ws0">house</div><div class="t m0 x1b p_h4 y1c ff1 fs2 fc0 sc0 ls0 ws0">surf</div><div class="t m0 x1c hd y1d ff4 fs2 fc0 sc0 ls0 ws0">…</div><div class="t m0 x1d p_h3 y1e ff1 fs1 fc0 sc0 ls0 ws0">Model</div><div class="t m0 x1e p_h3 y1f ff1 fs1 fc0 sc0 ls0 ws0">Model*</div><div class="t m0 x1f p_h4 y20 ff1 fs2 fc0 sc0 ls0 ws0">sit<span class="_ _6"> </span>walk</div><div class="t m0 x20 p_h4 y21 ff1 fs2 fc0 sc0 ls0 ws0">surf</div><div class="t m0 x21 hd y22 ff4 fs2 fc0 sc0 ls0 ws0">…</div><div class="t m0 x22 p_h2 y23 ff1 fs0 fc0 sc0 ls0 ws0">Density</div><div class="t m0 x23 hc y24 ff2 fs8 fc0 sc0 ls0 ws0">(B) Dataset <span class="_ _1"></span>Subpopulation Organization</div><div class="t m0 x24 p_h4 y25 ff1 fs2 fc0 sc0 ls0 ws0">Organized Subpop<span class="_ _1"></span>ulations</div><div class="t m0 x25 p_h2 y26 ff1 fs0 fc0 sc0 ls0 ws0">Dimensions</div><div class="t m0 x26 p_h2 y27 ff1 fs0 fc0 sc0 ls0 ws0">Class</div><div class="t m0 x27 p_h2 y28 ff1 fs0 fc0 sc0 ls0 ws0">Attribute<span class="_ _4"></span>s</div><div class="t m0 x27 hb y29 ff2 fs2 fc0 sc0 ls0 ws0">Criteria</div><div class="t m1 x28 he y2a ff1 fs9 fc0 sc0 ls0 ws0">Dim<span class="_ _4"></span>ension:</div><div class="t m1 x29 he y2a ff1 fs9 fc0 sc0 ls0 ws0">Action</div><div class="t m1 x2a he y2b ff1 fs9 fc0 sc0 ls0 ws0">Dim<span class="_ _4"></span>ension:</div><div class="t m1 x2b he y2b ff1 fs9 fc0 sc0 ls0 ws0">Backgrou<span class="_ _4"></span>nd</div><div class="t m0 x2c he y2c ff1 fs9 fc0 sc0 ls0 ws0">Surf</div><div class="t m0 x2d he y2d ff1 fs9 fc0 sc0 ls0 ws0">Sit</div><div class="t m0 x2e he y2e ff1 fs9 fc0 sc0 ls0 ws0">Walk</div><div class="t m0 x2f he y2f ff1 fs9 fc0 sc0 ls0 ws0">Water</div><div class="t m0 x30 hf y30 ff1 fsa fc0 sc0 ls0 ws0">Snow<span class="_ _7"> </span>Grass</div><div class="t m1 x2a he y31 ff1 fs9 fc0 sc0 ls0 ws0">Dim<span class="_ _4"></span>ension:</div><div class="t m1 x2b he y31 ff1 fs9 fc0 sc0 ls0 ws0">Object</div><div class="t m0 x2c he y32 ff1 fs9 fc0 sc0 ls0 ws0">Beach</div><div class="t m0 x30 he y33 ff1 fs9 fc0 sc0 ls0 ws0">Fri<span class="_ _4"></span>sbee<span class="_ _8"> </span>House</div><div class="t m0 x31 hc y34 ff2 fs8 fc0 sc0 ls0 ws0">(D) Slice Disco<span class="_ _1"></span>very </div><div class="t m0 x32 p_h2 y35 ff1 fs0 fc0 sc0 ls0 ws0">Topic <span class="_ _4"></span>Generat<span class="_ _4"></span>ion</div><div class="t m0 x32 p_h2 y36 ff1 fs0 fc0 sc0 ls0 ws0">+<span class="_"> </span>Imag<span class="_ _4"></span>e<span class="_"> </span>Retrieval</div><div class="t m0 x33 hb y37 ff2 fs2 fc0 sc0 ls0 ws0">Class<span class="_ _9"> </span>Dim<span class="_ _4"></span>ension<span class="_ _a"> </span>Attribute<span class="_ _b"> </span>Error Rate</div><div class="t m0 x34 h10 y38 ff1 fsb fc0 sc0 ls0 ws0">Dog</div><div class="t m0 x35 p_h4 y39 ff1 fs2 fc0 sc0 ls0 ws0">Action</div><div class="t m0 x36 p_h4 y3a ff1 fs2 fc0 sc0 ls0 ws0">Ly<span class="_ _4"></span>ing<span class="_ _c"> </span><span class="fc1 ls1">25%</span></div><div class="t m0 x37 p_h4 y3b ff1 fs2 fc0 sc0 ls0 ws0">Walking<span class="_ _d"> </span><span class="ls1">8%</span></div><div class="t m0 xd h10 y38 ff1 fsb fc0 sc0 ls0 ws0">Backg<span class="_ _4"></span>round</div><div class="t m0 x36 p_h4 y3c ff1 fs2 fc0 sc0 ls0 ws0">Beach<span class="_ _e"> </span><span class="ls1">9%</span></div><div class="t m0 x36 p_h4 y3d ff1 fs2 fc0 sc0 ls0 ws0">House<span class="_ _f"> </span><span class="ls1">6%</span></div><div class="t m0 x35 p_h4 y3e ff1 fs2 fc0 sc0 ls0 ws0">Object</div><div class="t m0 x38 p_h4 y3f ff1 fs2 fc0 sc0 ls0 ws0">Bed<span class="_ _10"> </span><span class="fc1 ls1">19%</span></div><div class="t m0 x39 p_h4 y40 ff1 fs2 fc0 sc0 ls0 ws0">Boat<span class="_ _11"> </span><span class="fc1 ls1">27%</span></div><div class="t m0 x3a p_h2 y41 ff1 fs0 fc0 sc0 ls0 ws0">Val<span class="_ _4"></span>idatio<span class="_ _4"></span>n accurac<span class="_ _4"></span>y for di<span class="_ _4"></span>fferent <span class="_ _4"></span>attribute<span class="_ _4"></span>s</div><div class="t m0 x3b h11 y42 ff1 fsc fc0 sc0 ls0 ws0">A dog standing on a <span class="fc1">boat</span>.</div><div class="t m0 x3b h11 y43 ff1 fsc fc0 sc0 ls0 ws0">Error R<span class="_ _1"></span>ate: 19%</div><div class="t m0 x3c h11 y44 ff1 fsc fc0 sc0 ls0 ws0">A dog <span class="fc1">ly<span class="_ _4"></span>ing<span class="_ _12"> </span><span class="fc0">in a </span>bed<span class="fc0">.</span></span></div><div class="t m0 x3c h11 y45 ff1 fsc fc0 sc0 ls0 ws0">Error R<span class="_ _1"></span>ate: 20%</div><div class="t m0 x34 h12 y46 ff2 fsd fc0 sc0 ls0 ws0">Slices</div><div class="t m0 x1f p_h4 y47 ff1 fs2 fc0 sc0 ls0 ws0">sit</div><div class="t m0 x3d p_h4 y48 ff1 fs2 fc0 sc0 ls0 ws0">walk</div><div class="t m0 x20 p_h4 y49 ff1 fs2 fc0 sc0 ls0 ws0">surf</div><div class="t m0 x21 hd y4a ff4 fs2 fc0 sc0 ls0 ws0">…</div><div class="t m0 x3e p_h4 y4b ff1 fs2 fc0 sc0 ls0 ws0">Action</div><div class="t m0 x3e p_h4 y4c ff1 fs2 fc0 sc0 ls0 ws0">Action</div></div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
-      </div>
-    </div>
-  </section>
 
-
-  <section class="section">
-    <!-- Results. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-        <h2 class="title is-3"> Dataset Subpopulation Organization </h2>
+      <div class="auto-resize-pdf" ori-width="1535" ori-height="398">
+        <div id="p1p1-pf1" class="p1p1-pf p1p1-w0 p1p1-h0" data-page-no="1"><div class="p1p1-pc p1p1-pc1 p1p1-w0 p1p1-h0"><img class="p1p1-bi p1p1-x0 p1p1-y0 p1p1-w0 p1p1-h0" alt="" src="images/p1p1.png"/><div class="p1p1-t p1p1-m0 p1p1-x1 p1p1-h1 p1p1-y1 p1p1-ff1 p1p1-fs0 p1p1-fc0 p1p1-sc0 p1p1-ls0 p1p1-ws0">Blowing b<span class="p1p1_ p1p1_0"></span>ubbles<span class="p1p1_ p1p1_1"> </span>Applaud<span class="p1p1_ p1p1_0"></span>ing<span class="p1p1_ p1p1_2"> </span><span class="p1p1-ls1">Jumping<span class="p1p1_ p1p1_3"> </span></span>Shootin<span class="p1p1_ p1p1_0"></span>g an <span class="p1p1_ p1p1_0"></span>arrow</div><div class="p1p1-t p1p1-m0 p1p1-x2 p1p1-h2 p1p1-y2 p1p1-ff2 p1p1-fs1 p1p1-fc0 p1p1-sc0 p1p1-ls2 p1p1-ws0">…</div><div class="p1p1-t p1p1-m0 p1p1-x3 p1p1-h1 p1p1-y3 p1p1-ff1 p1p1-fs0 p1p1-fc0 p1p1-sc0 p1p1-ls3 p1p1-ws0">Criterion</div><div class="p1p1-t p1p1-m0 p1p1-x4 p1p1-h3 p1p1-y4 p1p1-ff3 p1p1-fs0 p1p1-fc0 p1p1-sc0 p1p1-ls3 p1p1-ws0">Action</div></div><div class="p1p1-pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
       </div>
-    </div>
-    <!-- </div> -->
-    <!--/ Results. -->
-    <div class="container is-max-desktop">
+      <div class="auto-resize-pdf" ori-width="1535" ori-height="398">
+        <div id="p1p2-pf1" class="p1p2-pf p1p2-w0 p1p2-h0" data-page-no="1"><div class="p1p2-pc p1p2-pc1 p1p2-w0 p1p2-h0"><img class="p1p2-bi p1p2-x0 p1p2-y0 p1p2-w0 p1p2-h0" alt="" src="images/p1p2.png"/><div class="p1p2-t p1p2-m0 p1p2-x1 p1p2-h1 p1p2-y1 p1p2-ff1 p1p2-fs0 p1p2-fc0 p1p2-sc0 p1p2-ls0 p1p2-ws0">Restaura<span class="p1p2_ p1p2_0"></span>nt<span class="p1p2_ p1p2_1"> </span><span class="p1p2-ls1">Educat<span class="p1p2_ p1p2_0"></span>ional institu<span class="p1p2_ p1p2_0"></span>te<span class="p1p2_ p1p2_2"> </span>Store<span class="p1p2_ p1p2_3"> </span>Sports <span class="p1p2-ls2">f<span class="p1p2_ p1p2_0"></span><span class="p1p2-ls3">acil<span class="p1p2_ p1p2_4"></span>ity</span></span></span></div><div class="p1p2-t p1p2-m0 p1p2-x2 p1p2-h2 p1p2-y2 p1p2-ff2 p1p2-fs1 p1p2-fc0 p1p2-sc0 p1p2-ls2 p1p2-ws0">…</div><div class="p1p2-t p1p2-m0 p1p2-x3 p1p2-h1 p1p2-y3 p1p2-ff1 p1p2-fs0 p1p2-fc0 p1p2-sc0 p1p2-ls0 p1p2-ws0">Criterion</div><div class="p1p2-t p1p2-m0 p1p2-x4 p1p2-h3 p1p2-y4 p1p2-ff3 p1p2-fs0 p1p2-fc0 p1p2-sc0 p1p2-ls4 p1p2-ws0">Location</div></div><div class="p1p2-pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+      </div>
+      <div class="auto-resize-pdf" ori-width="1535" ori-height="398">
+        <div id="p1p3-pf1" class="p1p3-pf p1p3-w0 p1p3-h0" data-page-no="1"><div class="p1p3-pc p1p3-pc1 p1p3-w0 p1p3-h0"><img class="p1p3-bi p1p3-x0 p1p3-y0 p1p3-w0 p1p3-h0" alt="" src="images/p1p3.png"/><div class="p1p3-t p1p3-m0 p1p3-x1 p1p3-h1 p1p3-y1 p1p3-ff1 p1p3-fs0 p1p3-fc0 p1p3-sc0 p1p3-ls0 p1p3-ws0">Criterion</div><div class="p1p3-t p1p3-m0 p1p3-x2 p1p3-h2 p1p3-y2 p1p3-ff2 p1p3-fs0 p1p3-fc0 p1p3-sc0 p1p3-ls1 p1p3-ws0">Mood</div><div class="p1p3-t p1p3-m0 p1p3-x3 p1p3-h1 p1p3-y3 p1p3-ff1 p1p3-fs0 p1p3-fc0 p1p3-sc0 p1p3-ls2 p1p3-ws0">Joyful<span class="p1p3_ p1p3_0"> </span><span class="p1p3-ls3">Advent<span class="p1p3_ p1p3_1"></span>urous<span class="p1p3_ p1p3_2"> </span><span class="p1p3-ls4">Focused<span class="p1p3_ p1p3_3"> </span><span class="p1p3-ls0">Relaxed</span></span></span></div></div><div class="p1p3-pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <center>
+              Fig 1. Images clustering results condition on different text criteria: Action, Location, and Mood. [1]
+            </center>
+          </div>
+        </div>
+      </div>
 
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
             <p>
-              There are several advantages to organizing subpopulations within a dataset. It provides information about the numbers of data points in each subpopulation and can reflect dataset biases and help us identify some long-tail subgroups. Recent research suggests that creating hierarchical datasets with additional image attributes is beneficial for building more complex benchmarks. However, organizing subpopulations for such tasks currently requires significant manual effort.
-            </p>
-            <p>
-              Our method, SSD-LLM, automates subpopulation organization within datasets, and thus holds the potential to revolutionize the way hierarchical datasets are constructed.
-            </p>
+              Studying subpopulation shift [2] is to mitigate the negative impact of imbalanced subpopulation
+              distributions in the training set on the model. </p>
           </div>
-          <!--<centering>
-            <div style="text-align: center;">
-              <img id="teaser" src="images/tasks.png">
-            </div>
-          </centering>-->
         </div>
-  </section>
-
-  <section class="section">
-    <!-- Results. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-        <h2 class="title is-3"> Subpopulation Shift </h2>
       </div>
-    </div>
-    <!-- </div> -->
-    <!--/ Results. -->
-    <div class="container is-max-desktop">
+
+      <div style="width: 100%; overflow-x: auto;">
+        <div class="p2-container">
+
+          <!-- Y-axis Attribute Label -->
+
+
+          <!-- Spurious Correlations -->
+
+          <div class="p2-attribute-label">attribute</div>
+
+          <div class="table-p2-container">
+            <div style="text-align: center;">
+              <span>class</span>
+            </div>
+
+            <table class="p2-table">
+              <tr>
+                <td class="p2-filled"></td>
+                <td class="p2-light"></td>
+                <td class="p2-light"></td>
+              </tr>
+              <tr>
+                <td class="p2-light"></td>
+                <td class="p2-filled"></td>
+                <td class="p2-light"></td>
+              </tr>
+              <tr>
+                <td class="p2-light"></td>
+                <td class="p2-light"></td>
+                <td class="p2-filled"></td>
+              </tr>
+            </table>
+            <h4 style="color: red; text-align: center; font-size: 16px;">Spurious Correlations</h4>
+          </div>
+
+          <!-- Attribute Imbalance -->
+          <div class="p2-attribute-label">attribute</div>
+          <div class="table-p2-container">
+            <div style="text-align: center;">
+              <span>class</span>
+            </div>
+
+            <table class="p2-table">
+              <tr>
+                <td class="p2-filled"></td>
+                <td class="p2-filled"> </td>
+                <td class="p2-filled"></td>
+              </tr>
+              <tr>
+                <td class="p2-dark"></td>
+                <td class="p2-dark"></td>
+                <td class="p2-dark"></td>
+              </tr>
+              <tr>
+                <td class="p2-light"></td>
+                <td class="p2-light"></td>
+                <td class="p2-light"></td>
+              </tr>
+            </table>
+            <h4 style="color: olive; text-align: center; font-size: 16px;">Attribute Imbalance</h4>
+          </div>
+
+          <!-- Class Imbalance -->
+          <div class="p2-attribute-label">attribute</div>
+          <div class="table-p2-container">
+            <div style="text-align: center;">
+              <span>class</span>
+            </div>
+            <table class="p2-table">
+              <tr>
+                <td class="p2-filled"></td>
+                <td class="p2-dark"></td>
+                <td class="p2-light"></td>
+              </tr>
+              <tr>
+                <td class="p2-filled"></td>
+                <td class="p2-dark"></td>
+                <td class="p2-light"></td>
+              </tr>
+              <tr>
+                <td class="p2-filled"></td>
+                <td class="p2-dark"></td>
+                <td class="p2-light"></td>
+              </tr>
+            </table>
+            <h4 style="color: darkblue; text-align: center; font-size: 16px;">Class Imbalance</h4>
+          </div>
+
+          <!-- Attribute Generalization -->
+          <div class="p2-attribute-label">attribute</div>
+          <div class="table-p2-container">
+            <div style="text-align: center;">
+              <span>class</span>
+            </div>
+            <table class="p2-table">
+              <tr>
+                <td class="p2-filled"></td>
+                <td class="p2-light"></td>
+                <td class="p2-question"></td>
+              </tr>
+              <tr>
+                <td class="p2-question"></td>
+                <td class="p2-dark"></td>
+                <td class="p2-filled"></td>
+              </tr>
+              <tr>
+                <td class="p2-dark"></td>
+                <td class="p2-question"></td>
+                <td class="p2-light"></td>
+              </tr>
+            </table>
+            <h4 style="color: goldenrod; text-align: center; font-size: 16px;">Attribute Generalization</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <center>
+              Fig 2. Different types of subpopulation shift [2], which occurs when the proportion of some subpopulations
+              between training and deployment changes, and is shown to be of significant influence to model performances
+            </center>
+          </div>
+        </div>
+      </div>
 
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
             <p>
-              Subpopulation shift, a common challenge in machine learning, occurs when the proportion of some subpopulations between training and deployment changes. Previous work have shown that subpopulation shifts can cause significant drops to model performances, necessitating the need for methods that can handle subpopulation shifts.
-            </p>
-            <p>
-              SSD-LLM, combined with image generation, offers a solution to better handle the scenarios of subpopulation shifts. In our experiments, after we apply SSD-LLM to the datasets, we statistics the number of images contained in each subpopulation and utilize diffusion model to generate images for underrepresented subpopulations, which helps to achieve balanced classes and attributes. Specifically, we randomly sample attributes from the subpopulation structure for each class and employ LLM to make complete sentences based on these words as the input prompt of the diffusion model.
+              Slice discovery [5, 7] is aimed at identifying subpopulations model underperform.
             </p>
           </div>
-          <!-- <centering>
-            <div style="text-align: center;">
-              <img id="teaser" width="70%" src="images/generation.png">
-            </div>
-          </centering> -->
         </div>
-  </section>
-
-  <section class="section">
-    <!-- Results. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-        <h2 class="title is-3"> Slice Discovery </h2>
       </div>
-    </div>
-    <!-- </div> -->
-    <!--/ Results. -->
-    <div class="container is-max-desktop">
+
+      <div class="auto-resize-pdf" ori-width="1119" ori-height="223">
+        <div id="p3-pf1" class="p3-pf p3-w0 p3-h0" data-page-no="1"><div class="p3-pc p3-pc1 p3-w0 p3-h0"><img class="p3-bi p3-x0 p3-y0 p3-w0 p3-h0" alt="" src="images/p3.png"/><div class="p3-t p3-m0 p3-x1 p3-h1 p3-y1 p3-ff1 p3-fs0 p3-fc0 p3-sc0 p3-ls0 p3-ws0">1.ComputeSlices<span class="p3_ p3_0"> </span>2.Hypothesis<span class="p3-ff2">Formation</span></div><div class="p3-t p3-m0 p3-x2 p3-h1 p3-y2 p3-ff1 p3-fs0 p3-fc0 p3-sc0 p3-ls0 p3-ws0">3.Hypothesis<span class="p3-ff2">V<span class="p3_ p3_1"></span>alidation</span></div><div class="p3-t p3-m0 p3-x3 p3-h2 p3-y3 p3-ff3 p3-fs1 p3-fc1 p3-sc0 p3-ls0 p3-ws0">SliceDiscovery</div><div class="p3-t p3-m0 p3-x4 p3-h2 p3-y4 p3-ff3 p3-fs1 p3-fc1 p3-sc0 p3-ls0 p3-ws0">Algorithm</div><div class="p3-t p3-m0 p3-x5 p3-h3 p3-y5 p3-ff1 p3-fs2 p3-fc0 p3-sc0 p3-ls0 p3-ws0">&quot;Ihypothesizethat</div><div class="p3-t p3-m0 p3-x5 p3-h3 p3-y6 p3-ff1 p3-fs2 p3-fc0 p3-sc0 p3-ls0 p3-ws0">themodelunder-</div><div class="p3-t p3-m0 p3-x5 p3-h3 p3-y7 p3-ff1 p3-fs2 p3-fc0 p3-sc0 p3-ls0 p3-ws0">performson<span class="p3-ff2">photos</span></div><div class="p3-t p3-m0 p3-x5 p3-h3 p3-y8 p3-ff2 p3-fs2 p3-fc0 p3-sc0 p3-ls0 p3-ws0">of<span class="p3-ff1">…&quot;</span></div><div class="p3-t p3-m0 p3-x6 p3-h4 p3-y9 p3-ff1 p3-fs1 p3-fc1 p3-sc0 p3-ls0 p3-ws0">imagedataset<span class="p3_ p3_2"> </span>slices</div><div class="p3-t p3-m0 p3-x7 p3-h5 p3-ya p3-ff3 p3-fs3 p3-fc2 p3-sc0 p3-ls0 p3-ws0">…</div><div class="p3-t p3-m0 p3-x8 p3-h3 p3-yb p3-ff1 p3-fs2 p3-fc2 p3-sc0 p3-ls0 p3-ws0">average</div><div class="p3-t p3-m0 p3-x9 p3-h6 p3-yc p3-ff3 p3-fs2 p3-fc2 p3-sc0 p3-ls0 p3-ws0">33%Accuracy</div><div class="p3-t p3-m0 p3-x9 p3-h3 p3-yd p3-ff1 p3-fs2 p3-fc2 p3-sc0 p3-ls0 p3-ws0">onthissample</div><div class="p3-t p3-m0 p3-xa p3-h5 p3-ya p3-ff3 p3-fs3 p3-fc2 p3-sc0 p3-ls0 p3-ws0">…</div><div class="p3-t p3-m0 p3-xb p3-h3 p3-ye p3-ff1 p3-fs2 p3-fc2 p3-sc0 p3-ls0 p3-ws0">(vs.70%</div><div class="p3-t p3-m0 p3-xc p3-h3 p3-yf p3-ff1 p3-fs2 p3-fc2 p3-sc0 p3-ls0 p3-ws0">Accuracyoverall)</div></div><div class="p3-pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+      </div>
 
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
+            <center>
+              Fig 3. An overview of the typical process for slice discovery, which aims at identifying subpopulation
+              where the model underperforms. [7]
+            </center>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <h3>
+              Why is subpopulation an important concept in machine learning?
+            </h3>
             <p>
-              Slice discovery is a task aiming at uncovering subpopulations within a dataset where a machine learning model consistently exhibits poor performances. 
-              These subpopulations with underperformances, or slices, provide valuable insights into the model's limitations and potential biases.
+              Summarizing the commonalities of these tasks, we find that <font
+                style="color:#ff0000; font-weight: bold;">analyzing the subpopulation distribution</font> is the
+              key to solving all these problems. If the subpopulation distribution can be characterized, image
+              clustering results under different criteria are naturally obtained [1], additional images can be
+              supplemented to rare subgroups to balance the whole dataset [8], and slices can be easily discovered by
+              statistics error rate on validation set [9].
             </p>
             <p>
-              By identifying slices, researchers can gain a deeper understanding of where the models underperform and provide information about how to improve the model's performance in these challenging subpopulations.
+              Despite its importance, existing work lacks systematic exploration of subpopulation distribution.
+            </p>
+            <h3>
+              What's the contribution to our work?
+            </h3>
+            <p>
+              1. We introduce the concept of <font style="color:#ff0000; font-weight: bold;">subpopulation structure
+              </font> to characterize subpopulation distribution in an interpretable manner for the first time.
+            </p>
+            <p>
+              2. We propose <font style="color:#ff0000; font-weight: bold;">class-dimension-attribute-subpopulation
+                structure</font>, reducing the attribute confusion of the current class-attribute-subpopulation
+              structure.
+            </p>
+            <p>
+              3. We propose <font style="color:#ff0000; font-weight: bold;">Subpopulation Structure Discovery with Large
+                Language Model (SSD-LLM)</font> framework to uncover the underlying subpopulation structure of datasets
+              automatically, with two elaborate prompt engineering components Criteria Initialization and Criteria
+              Refinement. </p>
+            <p>
+              4. We provide methods for <font style="color:#ff0000; font-weight: bold;">Task-specific Tuning</font>,
+              enabling the application of the structures across a spectrum of subpopulation-related tasks, including
+              dataset subpopulation organization, subpopulation shift, and slice discovery.
             </p>
           </div>
-          <!-- <centering>
-            <div style="text-align: center;">
-              <img id="teaser" width="70%" src="images/curation.png">
-            </div>
-          </centering> -->
         </div>
+      </div>
+
+      <div class="auto-resize-pdf" ori-width="708.6" ori-height="402.48">
+        <div id="p4-pf1" class="p4-pf p4-w0 p4-h0" data-page-no="1"><div class="p4-pc p4-pc1 p4-w0 p4-h0"><img class="p4-bi p4-x0 p4-y0 p4-w1 p4-h1" alt="" src="images/p4.png"/><div class="p4-c p4-x0 p4-y0 p4-w2 p4-h0"><div class="p4-t p4-m0 p4-x1 p4-h2 p4-y1 p4-ff1 p4-fs0 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Dimension</div><div class="p4-t p4-m0 p4-x2 p4-h2 p4-y2 p4-ff1 p4-fs0 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Class</div><div class="p4-t p4-m0 p4-x3 p4-h2 p4-y3 p4-ff1 p4-fs0 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Attribute</div><div class="p4-t p4-m0 p4-x4 p4-h3 p4-y4 p4-ff1 p4-fs1 p4-fc0 p4-sc0 p4-ls0 p4-ws0">action</div><div class="p4-t p4-m0 p4-x5 p4-h4 p4-y5 p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls1 p4-ws0">dog</div><div class="p4-t p4-m0 p4-x6 p4-h3 p4-y6 p4-ff1 p4-fs1 p4-fc0 p4-sc0 p4-ls0 p4-ws0">background<span class="p4_ p4_0"> </span>object</div><div class="p4-t p4-m0 p4-x7 p4-h5 p4-y7 p4-ff2 p4-fs3 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Subpopu<span class="p4_ p4_1"></span>lation St<span class="p4_ p4_1"></span>ructure</div><div class="p4-t p4-m0 p4-x8 p4-h3 p4-y8 p4-ff1 p4-fs1 p4-fc0 p4-sc0 p4-ls0 p4-ws0">surf</div><div class="p4-t p4-m0 p4-x9 p4-h3 p4-y9 p4-ff1 p4-fs1 p4-fc0 p4-sc0 p4-ls0 p4-ws0">sit<span class="p4_ p4_2"> </span>walk<span class="p4_ p4_3"> </span>water</div><div class="p4-t p4-m0 p4-xa p4-h3 p4-ya p4-ff1 p4-fs1 p4-fc0 p4-sc0 p4-ls0 p4-ws0">snow</div><div class="p4-t p4-m0 p4-xb p4-h3 p4-y9 p4-ff1 p4-fs1 p4-fc0 p4-sc0 p4-ls0 p4-ws0">grass</div><div class="p4-t p4-m0 p4-xc p4-h3 p4-yb p4-ff1 p4-fs1 p4-fc0 p4-sc0 p4-ls0 p4-ws0">beach</div><div class="p4-t p4-m0 p4-xd p4-h3 p4-y9 p4-ff1 p4-fs1 p4-fc0 p4-sc0 p4-ls0 p4-ws0">frisbee</div><div class="p4-t p4-m0 p4-xe p4-h3 p4-yb p4-ff1 p4-fs1 p4-fc0 p4-sc0 p4-ls0 p4-ws0">house</div><div class="p4-t p4-m0 p4-xf p4-h6 p4-yc p4-ff2 p4-fs0 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Subpopulations</div><div class="p4-t p4-m0 p4-x10 p4-h7 p4-yd p4-ff3 p4-fs4 p4-fc0 p4-sc1 p4-ls2 p4-ws0">SSD<span class="p4-ls0">-<span class="p4_ p4_4"></span>LL<span class="p4_ p4_4"></span>M</span></div><div class="p4-t p4-m0 p4-x11 p4-h8 p4-ye p4-ff3 p4-fs5 p4-fc0 p4-sc1 p4-ls0 p4-ws0">Down<span class="p4_ p4_4"></span>str<span class="p4_ p4_4"></span>ea<span class="p4_ p4_4"></span>m </div><div class="p4-t p4-m0 p4-x12 p4-h8 p4-yf p4-ff3 p4-fs5 p4-fc0 p4-sc1 p4-ls0 p4-ws0">Task<span class="p4_ p4_4"></span>s</div><div class="p4-t p4-m0 p4-x13 p4-h9 p4-y10 p4-ff2 p4-fs6 p4-fc0 p4-sc0 p4-ls0 p4-ws0">(A) SSD with <span class="p4_ p4_4"></span>LLM</div><div class="p4-t p4-m0 p4-x14 p4-ha p4-y11 p4-ff2 p4-fs7 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Dataset</div><div class="p4-t p4-m0 p4-x3 p4-hb p4-y12 p4-ff2 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Criteria</div><div class="p4-t p4-m0 p4-x15 p4-hc p4-y13 p4-ff2 p4-fs8 p4-fc0 p4-sc0 p4-ls0 p4-ws0">(C) Subpopulation Shift</div><div class="p4-t p4-m0 p4-x16 p4-h2 p4-y14 p4-ff1 p4-fs0 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Better L<span class="p4_ p4_4"></span>ong-tail <span class="p4_ p4_5"></span>Performance</div><div class="p4-t p4-m0 p4-x17 p4-h2 p4-y15 p4-ff1 p4-fs0 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Density</div><div class="p4-t p4-m0 p4-xf p4-h2 p4-y16 p4-ff1 p4-fs0 p4-fc0 p4-sc0 p4-ls3 p4-ws0">SSD<span class="p4-ls0">-L<span class="p4_ p4_4"></span>L<span class="p4_ p4_4"></span>M <span class="p4_ p4_1"></span> +</span></div><div class="p4-t p4-m0 p4-xf p4-h2 p4-y17 p4-ff1 p4-fs0 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Imag<span class="p4_ p4_4"></span>e Generation</div><div class="p4-t p4-m1 p4-x18 p4-h2 p4-y18 p4-ff1 p4-fs0 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Accuracy</div><div class="p4-t p4-m0 p4-x19 p4-h4 p4-y19 p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">sit</div><div class="p4-t p4-m0 p4-x1a p4-h4 p4-y1a p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">house</div><div class="p4-t p4-m0 p4-x1b p4-h4 p4-y1b p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">surf</div><div class="p4-t p4-m0 p4-x1c p4-hd p4-y1c p4-ff4 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">…</div><div class="p4-t p4-m0 p4-x1d p4-h3 p4-y1d p4-ff1 p4-fs1 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Model</div><div class="p4-t p4-m0 p4-x1e p4-h3 p4-y1e p4-ff1 p4-fs1 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Model*</div><div class="p4-t p4-m0 p4-x1f p4-h4 p4-y1f p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">sit<span class="p4_ p4_6"> </span>walk</div><div class="p4-t p4-m0 p4-x20 p4-h4 p4-y20 p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">surf</div><div class="p4-t p4-m0 p4-x21 p4-hd p4-y21 p4-ff4 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">…</div><div class="p4-t p4-m0 p4-x22 p4-h2 p4-y22 p4-ff1 p4-fs0 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Density</div><div class="p4-t p4-m0 p4-x23 p4-hc p4-y23 p4-ff2 p4-fs8 p4-fc0 p4-sc0 p4-ls0 p4-ws0">(B) Dataset <span class="p4_ p4_1"></span>Subpopulation Organization</div><div class="p4-t p4-m0 p4-x24 p4-h4 p4-y24 p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Organized Subpop<span class="p4_ p4_1"></span>ulations</div><div class="p4-t p4-m0 p4-x25 p4-h2 p4-y25 p4-ff1 p4-fs0 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Dimensions</div><div class="p4-t p4-m0 p4-x26 p4-h2 p4-y26 p4-ff1 p4-fs0 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Class</div><div class="p4-t p4-m0 p4-x27 p4-h2 p4-y27 p4-ff1 p4-fs0 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Attribute<span class="p4_ p4_4"></span>s</div><div class="p4-t p4-m0 p4-x27 p4-hb p4-y28 p4-ff2 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Criteria</div><div class="p4-t p4-m1 p4-x28 p4-he p4-y29 p4-ff1 p4-fs9 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Dim<span class="p4_ p4_4"></span>ension:</div><div class="p4-t p4-m1 p4-x29 p4-he p4-y29 p4-ff1 p4-fs9 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Action</div><div class="p4-t p4-m1 p4-x2a p4-he p4-y2a p4-ff1 p4-fs9 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Dim<span class="p4_ p4_4"></span>ension:</div><div class="p4-t p4-m1 p4-x2b p4-he p4-y2a p4-ff1 p4-fs9 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Backgrou<span class="p4_ p4_4"></span>nd</div><div class="p4-t p4-m0 p4-x2c p4-he p4-y2b p4-ff1 p4-fs9 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Surf</div><div class="p4-t p4-m0 p4-x2d p4-he p4-y2c p4-ff1 p4-fs9 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Sit</div><div class="p4-t p4-m0 p4-x2e p4-he p4-y2d p4-ff1 p4-fs9 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Walk</div><div class="p4-t p4-m0 p4-x2f p4-he p4-y2e p4-ff1 p4-fs9 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Water</div><div class="p4-t p4-m0 p4-x30 p4-hf p4-y2f p4-ff1 p4-fsa p4-fc0 p4-sc0 p4-ls0 p4-ws0">Snow<span class="p4_ p4_7"> </span>Grass</div><div class="p4-t p4-m1 p4-x2a p4-he p4-y30 p4-ff1 p4-fs9 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Dim<span class="p4_ p4_4"></span>ension:</div><div class="p4-t p4-m1 p4-x2b p4-he p4-y30 p4-ff1 p4-fs9 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Object</div><div class="p4-t p4-m0 p4-x2c p4-he p4-y31 p4-ff1 p4-fs9 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Beach</div><div class="p4-t p4-m0 p4-x30 p4-he p4-y32 p4-ff1 p4-fs9 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Fri<span class="p4_ p4_4"></span>sbee<span class="p4_ p4_8"> </span>House</div><div class="p4-t p4-m0 p4-x31 p4-hc p4-y33 p4-ff2 p4-fs8 p4-fc0 p4-sc0 p4-ls0 p4-ws0">(D) Slice Disco<span class="p4_ p4_1"></span>very </div><div class="p4-t p4-m0 p4-x32 p4-h2 p4-y34 p4-ff1 p4-fs0 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Topic <span class="p4_ p4_4"></span>Generat<span class="p4_ p4_4"></span>ion</div><div class="p4-t p4-m0 p4-x32 p4-h2 p4-y35 p4-ff1 p4-fs0 p4-fc0 p4-sc0 p4-ls0 p4-ws0">+<span class="p4_"> </span>Imag<span class="p4_ p4_4"></span>e<span class="p4_"> </span>Retrieval</div><div class="p4-t p4-m0 p4-x33 p4-hb p4-y36 p4-ff2 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Class<span class="p4_ p4_9"> </span>Dim<span class="p4_ p4_4"></span>ension<span class="p4_ p4_a"> </span>Attribute<span class="p4_ p4_b"> </span>Error Rate</div><div class="p4-t p4-m0 p4-x34 p4-h10 p4-y37 p4-ff1 p4-fsb p4-fc0 p4-sc0 p4-ls0 p4-ws0">Dog</div><div class="p4-t p4-m0 p4-x35 p4-h4 p4-y38 p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Action</div><div class="p4-t p4-m0 p4-x36 p4-h4 p4-y39 p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Ly<span class="p4_ p4_4"></span>ing<span class="p4_ p4_c"> </span><span class="p4-fc1 p4-ls1">25%</span></div><div class="p4-t p4-m0 p4-x37 p4-h4 p4-y3a p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Walking<span class="p4_ p4_d"> </span><span class="p4-ls1">8%</span></div><div class="p4-t p4-m0 p4-xd p4-h10 p4-y37 p4-ff1 p4-fsb p4-fc0 p4-sc0 p4-ls0 p4-ws0">Backg<span class="p4_ p4_4"></span>round</div><div class="p4-t p4-m0 p4-x36 p4-h4 p4-y3b p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Beach<span class="p4_ p4_e"> </span><span class="p4-ls1">9%</span></div><div class="p4-t p4-m0 p4-x36 p4-h4 p4-y3c p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">House<span class="p4_ p4_f"> </span><span class="p4-ls1">6%</span></div><div class="p4-t p4-m0 p4-x35 p4-h4 p4-y3d p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Object</div><div class="p4-t p4-m0 p4-x38 p4-h4 p4-y3e p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Bed<span class="p4_ p4_10"> </span><span class="p4-fc1 p4-ls1">19%</span></div><div class="p4-t p4-m0 p4-x39 p4-h4 p4-y3f p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Boat<span class="p4_ p4_11"> </span><span class="p4-fc1 p4-ls1">27%</span></div><div class="p4-t p4-m0 p4-x3a p4-h2 p4-y40 p4-ff1 p4-fs0 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Val<span class="p4_ p4_4"></span>idatio<span class="p4_ p4_4"></span>n accurac<span class="p4_ p4_4"></span>y for di<span class="p4_ p4_4"></span>fferent <span class="p4_ p4_4"></span>attribute<span class="p4_ p4_4"></span>s</div><div class="p4-t p4-m0 p4-x3b p4-h11 p4-y41 p4-ff1 p4-fsc p4-fc0 p4-sc0 p4-ls0 p4-ws0">A dog standing on a <span class="p4-fc1">boat</span>.</div><div class="p4-t p4-m0 p4-x3b p4-h11 p4-y42 p4-ff1 p4-fsc p4-fc0 p4-sc0 p4-ls0 p4-ws0">Error R<span class="p4_ p4_1"></span>ate: 19%</div><div class="p4-t p4-m0 p4-x3c p4-h11 p4-y43 p4-ff1 p4-fsc p4-fc0 p4-sc0 p4-ls0 p4-ws0">A dog <span class="p4-fc1">ly<span class="p4_ p4_4"></span>ing<span class="p4_ p4_12"> </span><span class="p4-fc0">in a </span>bed<span class="p4-fc0">.</span></span></div><div class="p4-t p4-m0 p4-x3c p4-h11 p4-y44 p4-ff1 p4-fsc p4-fc0 p4-sc0 p4-ls0 p4-ws0">Error R<span class="p4_ p4_1"></span>ate: 20%</div><div class="p4-t p4-m0 p4-x34 p4-h12 p4-y45 p4-ff2 p4-fsd p4-fc0 p4-sc0 p4-ls0 p4-ws0">Slices</div><div class="p4-t p4-m0 p4-x1f p4-h4 p4-y46 p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">sit</div><div class="p4-t p4-m0 p4-x3d p4-h4 p4-y47 p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">walk</div><div class="p4-t p4-m0 p4-x20 p4-h4 p4-y48 p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">surf</div><div class="p4-t p4-m0 p4-x21 p4-hd p4-y49 p4-ff4 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">…</div><div class="p4-t p4-m0 p4-x3e p4-h4 p4-y4a p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Action</div><div class="p4-t p4-m0 p4-x3e p4-h4 p4-y4b p4-ff1 p4-fs2 p4-fc0 p4-sc0 p4-ls0 p4-ws0">Action</div></div></div><div class="p4-pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+      </div>
+
+
+      <div class="columns is-centered">
+  
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <center>
+              Fig. 4: (A) The Workflow of Subpopulation Structure Discovery with Large Language Models (SSD-LLM).
+              SSD-LLM can further support several downstream tasks including: (B) Dataset Subpopulation Organization;
+              (C) Subpopulation Shift; (D) Slice discovery
+            </center>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section>
+
+
+
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">

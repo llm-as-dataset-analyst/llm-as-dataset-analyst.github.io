@@ -1,0 +1,116 @@
+/*! 
+ * Base CSS for pdf2htmlEX
+ * Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com> 
+ * https://github.com/pdf2htmlEX/pdf2htmlEX/blob/master/share/LICENSE
+ */#sidebar{position:absolute;top:0;left:0;bottom:0;width:250px;padding:0;margin:0;overflow:auto}#page-container{position:absolute;top:0;left:0;margin:0;padding:0;border:0}@media screen{#sidebar.opened+#page-container{left:250px}#page-container{bottom:0;right:0;overflow:auto}.loading-indicator{display:none}.loading-indicator.active{display:block;position:absolute;width:64px;height:64px;top:50%;left:50%;margin-top:-32px;margin-left:-32px}.loading-indicator img{position:absolute;top:0;left:0;bottom:0;right:0}}@media print{@page{margin:0}html{margin:0}body{margin:0;-webkit-print-color-adjust:exact}#sidebar{display:none}#page-container{width:auto;height:auto;overflow:visible;background-color:transparent}.p3-d{display:none}}.p3-pf{position:relative;background-color:white;overflow:hidden;margin:0;border:0}.p3-pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0;-ms-transform-origin:0 0;-webkit-transform-origin:0 0}.p3-pc.opened{display:block}.p3-bf{position:absolute;border:0;margin:0;top:0;bottom:0;width:100%;height:100%;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}.p3-bi{position:absolute;border:0;margin:0;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}@media print{.p3-pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}@-moz-document url-prefix(){.p3-pf{overflow:visible;border:1px solid #fff}.p3-pc{overflow:visible}}}.p3-c{position:absolute;border:0;padding:0;margin:0;overflow:hidden;display:block}.p3-t{position:absolute;white-space:pre;font-size:1px;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%;unicode-bidi:bidi-override;-moz-font-feature-settings:"liga" 0}.p3-t:after{content:''}.p3-t:before{content:'';display:inline-block}.p3-t span{position:relative;unicode-bidi:bidi-override}.p3_{display:inline-block;color:transparent;z-index:-1}::selection{background:rgba(127,255,255,0.4)}::-moz-selection{background:rgba(127,255,255,0.4)}.p3-pi{display:none}.p3-d{position:absolute;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%}.p3-it{border:0;background-color:rgba(255,255,255,0.0)}.p3-ir:hover{cursor:pointer}
+
+ .p3-ff0{font-family:sans-serif;visibility:hidden;}
+@font-face{font-family:p3-ff1;src:url(../fonts/p3_f1.woff)format("woff");}.p3-ff1{font-family:p3-ff1;line-height:0.979000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:p3-ff2;src:url(../fonts/p3_f2.woff)format("woff");}.p3-ff2{font-family:p3-ff2;line-height:0.979000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:p3-ff3;src:url(../fonts/p3_f3.woff)format("woff");}.p3-ff3{font-family:p3-ff3;line-height:0.993000;font-style:normal;font-weight:normal;visibility:visible;}
+.p3-m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
+.p3-v0{vertical-align:0.000000px;}
+.p3-ls0{letter-spacing:0.000000px;}
+.p3-scp3_{text-shadow:none;}
+.p3-sc0{text-shadow:-0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em  transparent;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.p3-scp3_{-webkit-text-stroke:0px transparent;}
+.p3-sc0{-webkit-text-stroke:0.015em transparent;text-shadow:none;}
+}
+.p3-ws0{word-spacing:0.000000px;}
+.p3_1{margin-left:-5.541750px;}
+.p3_2{width:678.698650px;}
+.p3_0{width:693.183292px;}
+.p3-fc1{color:rgb(53,28,117);}
+.p3-fc2{color:rgb(102,102,102);}
+.p3-fc0{color:rgb(0,0,0);}
+.p3-fs3{font-size:48.000002px;}
+.p3-fs2{font-size:64.000004px;}
+.p3-fs1{font-size:72.000002px;}
+.p3-fs0{font-size:84.000003px;}
+.p3-y0{bottom:0.000000px;}
+.p3-ya{bottom:27.269366px;}
+.p3-y9{bottom:38.313499px;}
+.p3-yf{bottom:41.904561px;}
+.p3-ye{bottom:61.104560px;}
+.p3-y8{bottom:64.966194px;}
+.p3-yd{bottom:83.235277px;}
+.p3-y7{bottom:84.166187px;}
+.p3-y4{bottom:88.809951px;}
+.p3-yb{bottom:93.066178px;}
+.p3-yc{bottom:102.435276px;}
+.p3-y6{bottom:103.366181px;}
+.p3-y3{bottom:110.409955px;}
+.p3-y5{bottom:122.566181px;}
+.p3-y1{bottom:178.841970px;}
+.p3-y2{bottom:180.127403px;}
+.p3-h5{height:36.960001px;}
+.p3-h6{height:49.280003px;}
+.p3-h3{height:49.984003px;}
+.p3-h2{height:55.440002px;}
+.p3-h4{height:56.232002px;}
+.p3-h1{height:65.604002px;}
+.p3-h0{height:223.000000px;}
+.p3-w0{width:1119.000000px;}
+.p3-x0{left:0.000000px;}
+.p3-x6{left:26.752695px;}
+.p3-x1{left:101.902463px;}
+.p3-x3{left:140.286121px;}
+.p3-x4{left:158.412065px;}
+.p3-x5{left:585.212606px;}
+.p3-x7{left:795.698613px;}
+.p3-x2{left:804.380688px;}
+.p3-xa{left:849.261590px;}
+.p3-x8{left:897.490283px;}
+.p3-xc{left:974.048646px;}
+.p3-x9{left:983.811604px;}
+.p3-xb{left:1003.409590px;}
+@media print{
+.p3-v0{vertical-align:0.000000pt;}
+.p3-ls0{letter-spacing:0.000000pt;}
+.p3-ws0{word-spacing:0.000000pt;}
+.p3_1{margin-left:-7.389000pt;}
+.p3_2{width:904.931533pt;}
+.p3_0{width:924.244390pt;}
+.p3-fs3{font-size:64.000002pt;}
+.p3-fs2{font-size:85.333339pt;}
+.p3-fs1{font-size:96.000003pt;}
+.p3-fs0{font-size:112.000004pt;}
+.p3-y0{bottom:0.000000pt;}
+.p3-ya{bottom:36.359155pt;}
+.p3-y9{bottom:51.084665pt;}
+.p3-yf{bottom:55.872748pt;}
+.p3-ye{bottom:81.472746pt;}
+.p3-y8{bottom:86.621592pt;}
+.p3-yd{bottom:110.980369pt;}
+.p3-y7{bottom:112.221582pt;}
+.p3-y4{bottom:118.413269pt;}
+.p3-yb{bottom:124.088238pt;}
+.p3-yc{bottom:136.580368pt;}
+.p3-y6{bottom:137.821575pt;}
+.p3-y3{bottom:147.213274pt;}
+.p3-y5{bottom:163.421574pt;}
+.p3-y1{bottom:238.455959pt;}
+.p3-y2{bottom:240.169871pt;}
+.p3-h5{height:49.280002pt;}
+.p3-h6{height:65.706671pt;}
+.p3-h3{height:66.645338pt;}
+.p3-h2{height:73.920002pt;}
+.p3-h4{height:74.976002pt;}
+.p3-h1{height:87.472003pt;}
+.p3-h0{height:297.333333pt;}
+.p3-w0{width:1492.000000pt;}
+.p3-x0{left:0.000000pt;}
+.p3-x6{left:35.670260pt;}
+.p3-x1{left:135.869950pt;}
+.p3-x3{left:187.048162pt;}
+.p3-x4{left:211.216087pt;}
+.p3-x5{left:780.283475pt;}
+.p3-x7{left:1060.931484pt;}
+.p3-x2{left:1072.507584pt;}
+.p3-xa{left:1132.348786pt;}
+.p3-x8{left:1196.653710pt;}
+.p3-xc{left:1298.731528pt;}
+.p3-x9{left:1311.748805pt;}
+.p3-xb{left:1337.879453pt;}
+}

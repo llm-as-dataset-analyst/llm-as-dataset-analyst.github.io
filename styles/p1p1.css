@@ -1,0 +1,74 @@
+/*! 
+ * Base CSS for pdf2htmlEX
+ * Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com> 
+ * https://github.com/pdf2htmlEX/pdf2htmlEX/blob/master/share/LICENSE
+ */#sidebar{position:absolute;top:0;left:0;bottom:0;width:250px;padding:0;margin:0;overflow:auto}#page-container{position:absolute;top:0;left:0;margin:0;padding:0;border:0}@media screen{#sidebar.opened+#page-container{left:250px}#page-container{bottom:0;right:0;overflow:auto}.loading-indicator{display:none}.loading-indicator.active{display:block;position:absolute;width:64px;height:64px;top:50%;left:50%;margin-top:-32px;margin-left:-32px}.loading-indicator img{position:absolute;top:0;left:0;bottom:0;right:0}}@media print{@page{margin:0}html{margin:0}body{margin:0;-webkit-print-color-adjust:exact}#sidebar{display:none}#page-container{width:auto;height:auto;overflow:visible;background-color:transparent}.p1p1-d{display:none}}.p1p1-pf{position:relative;background-color:white;overflow:hidden;margin:0;border:0}.p1p1-pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0;-ms-transform-origin:0 0;-webkit-transform-origin:0 0}.p1p1-pc.opened{display:block}.p1p1-bf{position:absolute;border:0;margin:0;top:0;bottom:0;width:100%;height:100%;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}.p1p1-bi{position:absolute;border:0;margin:0;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}@media print{.p1p1-pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}@-moz-document url-prefix(){.p1p1-pf{overflow:visible;border:1px solid #fff}.p1p1-pc{overflow:visible}}}.p1p1-c{position:absolute;border:0;padding:0;margin:0;overflow:hidden;display:block}.p1p1-t{position:absolute;white-space:pre;font-size:1px;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%;unicode-bidi:bidi-override;-moz-font-feature-settings:"liga" 0}.p1p1-t:after{content:''}.p1p1-t:before{content:'';display:inline-block}.p1p1-t span{position:relative;unicode-bidi:bidi-override}.p1p1_{display:inline-block;color:transparent;z-index:-1}::selection{background:rgba(127,255,255,0.4)}::-moz-selection{background:rgba(127,255,255,0.4)}.p1p1-pi{display:none}.p1p1-d{position:absolute;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%}.p1p1-it{border:0;background-color:rgba(255,255,255,0.0)}.p1p1-ir:hover{cursor:pointer}
+
+ .p1p1-ff0{font-family:sans-serif;visibility:hidden;}
+@font-face{font-family:p1p1-ff1;src:url(../fonts/p1p1_f1.woff)format("woff");}.p1p1-ff1{font-family:p1p1-ff1;line-height:0.938477;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:p1p1-ff2;src:url(../fonts/p1p1_f2.woff)format("woff");}.p1p1-ff2{font-family:p1p1-ff2;line-height:0.666504;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:p1p1-ff3;src:url(../fonts/p1p1_f3.woff)format("woff");}.p1p1-ff3{font-family:p1p1-ff3;line-height:0.727539;font-style:normal;font-weight:normal;visibility:visible;}
+.p1p1-m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
+.p1p1-v0{vertical-align:0.000000px;}
+.p1p1-ls1{letter-spacing:-0.141120px;}
+.p1p1-ls3{letter-spacing:-0.128291px;}
+.p1p1-ls0{letter-spacing:-0.064145px;}
+.p1p1-ls2{letter-spacing:0.000000px;}
+.p1p1-scp1p1_{text-shadow:none;}
+.p1p1-sc0{text-shadow:-0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em  transparent;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.p1p1-scp1p1_{-webkit-text-stroke:0px transparent;}
+.p1p1-sc0{-webkit-text-stroke:0.015em transparent;text-shadow:none;}
+}
+.p1p1-ws0{word-spacing:0.000000px;}
+.p1p1_0{margin-left:-1.026327px;}
+.p1p1_1{width:489.471278px;}
+.p1p1_3{width:508.628535px;}
+.p1p1_2{width:942.284017px;}
+.p1p1-fc0{color:rgb(0,0,0);}
+.p1p1-fs1{font-size:120.436354px;}
+.p1p1-fs0{font-size:128.290898px;}
+.p1p1-y0{bottom:0.000000px;}
+.p1p1-y4{bottom:160.181803px;}
+.p1p1-y2{bottom:174.800003px;}
+.p1p1-y3{bottom:212.981803px;}
+.p1p1-y1{bottom:349.999993px;}
+.p1p1-h2{height:80.271300px;}
+.p1p1-h3{height:91.833231px;}
+.p1p1-h1{height:93.399282px;}
+.p1p1-h0{height:398.000000px;}
+.p1p1-w0{width:1535.000000px;}
+.p1p1-x0{left:0.000000px;}
+.p1p1-x3{left:35.424630px;}
+.p1p1-x4{left:46.109630px;}
+.p1p1-x1{left:225.049900px;}
+.p1p1-x2{left:831.745200px;}
+@media print{
+.p1p1-v0{vertical-align:0.000000pt;}
+.p1p1-ls1{letter-spacing:-0.188160pt;}
+.p1p1-ls3{letter-spacing:-0.171055pt;}
+.p1p1-ls0{letter-spacing:-0.085527pt;}
+.p1p1-ls2{letter-spacing:0.000000pt;}
+.p1p1-ws0{word-spacing:0.000000pt;}
+.p1p1_0{margin-left:-1.368436pt;}
+.p1p1_1{width:652.628370pt;}
+.p1p1_3{width:678.171380pt;}
+.p1p1_2{width:1256.378689pt;}
+.p1p1-fs1{font-size:160.581805pt;}
+.p1p1-fs0{font-size:171.054531pt;}
+.p1p1-y0{bottom:0.000000pt;}
+.p1p1-y4{bottom:213.575738pt;}
+.p1p1-y2{bottom:233.066671pt;}
+.p1p1-y3{bottom:283.975738pt;}
+.p1p1-y1{bottom:466.666658pt;}
+.p1p1-h2{height:107.028400pt;}
+.p1p1-h3{height:122.444308pt;}
+.p1p1-h1{height:124.532376pt;}
+.p1p1-h0{height:530.666667pt;}
+.p1p1-w0{width:2046.666667pt;}
+.p1p1-x0{left:0.000000pt;}
+.p1p1-x3{left:47.232840pt;}
+.p1p1-x4{left:61.479507pt;}
+.p1p1-x1{left:300.066533pt;}
+.p1p1-x2{left:1108.993600pt;}
+}
