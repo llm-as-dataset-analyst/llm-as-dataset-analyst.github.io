@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="styles/p2.css" />
   <link rel="stylesheet" href="styles/p3.css" />
   <link rel="stylesheet" href="styles/p4.css" />
+  <link rel="stylesheet" href="styles/p5.css" />
+  <link rel="stylesheet" href="styles/p6.css" />
+  <link rel="stylesheet" href="styles/p7.css" />
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
@@ -58,6 +61,9 @@
 </head>
 
 <style>
+  .auto-resize-pdf{
+    z-index: -1;
+  }
   .expandable-card .card-text-container {
     max-height: 200px;
     overflow-y: hidden;
@@ -619,9 +625,93 @@
     </div>
   </section>
 
+  <section class="section">
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3"> Methods </h2>
+      </div>
+    </div>
+    <!-- </div> -->
+    <!--/ Results. -->
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <h3>
+              What's the subpopulation structure
+            </h3>
+            <p>
+              Subpopulation structure is a set of hierarchical relations among several subpopulations determined by certain criteria.
+              Subpopulation structure can characterize subpopulation distribution in an interpretable manner.            </p>
+            <h3>
+              What's a good subpopulation structure
+            </h3>
+            <p>
+              Former works like Metashift [3] and NICO++ [4] construct image datasets including subpopulation information,
+              which organizes the images with respect to some extra attributes, and can be viewed as a class-, attribute-, subpopulation-layer structure.
+              The problem of such a structure is ignoring the category of attributes (or Dimension), leading to attribute inconsistency and confusion.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="auto-resize-pdf" ori-width="1011" ori-height="564">
+        <div id="p5-pf1" class="p5-pf p5-w0 p5-h0" data-page-no="1"><div class="p5-pc p5-pc1 p5-w0 p5-h0"><img class="p5-bi p5-x0 p5-y0 p5-w0 p5-h0" alt="" src="images/p5.png"/><div class="p5-t p5-m0 p5-x1 p5-h1 p5-y1 p5-ff1 p5-fs0 p5-fc0 p5-sc0 p5-ls0 p5-ws0">Dog (Boat)<span class="p5_ p5_0"></span>Dog (Surfboard)<span class="p5_ p5_1"> </span>Dog (Car)</div><div class="p5-t p5-m0 p5-x2 p5-h1 p5-y2 p5-ff1 p5-fs0 p5-fc0 p5-sc0 p5-ls0 p5-ws0">Dog (Frisbee)</div><div class="p5-t p5-m0 p5-x3 p5-h1 p5-y3 p5-ff1 p5-fs0 p5-fc0 p5-sc0 p5-ls0 p5-ws0">Cat (Keyboard)<span class="p5_ p5_2"> </span>Cat (Sink)<span class="p5_ p5_3"> </span>Cat (Box)<span class="p5_ p5_4"> </span>Cat (Remote Control)</div></div><div class="p5-pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+      </div>
 
 
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <center>
+              Fig 5.  Metashift [3]. Drawback: Not comprehensive (Co-occurrence Objects) , Attribute Overlap(Surfboard vs Water)
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="auto-resize-pdf" ori-width="1244" ori-height="850">
+        <div id="p6-pf1" class="p6-pf p6-w0 p6-h0" data-page-no="1"><div class="p6-pc p6-pc1 p6-w0 p6-h0"><img class="p6-bi p6-x0 p6-y0 p6-w0 p6-h0" alt="" src="images/p6.png"/><div class="p6-t p6-m0 p6-x1 p6-h1 p6-y1 p6-ff1 p6-fs0 p6-fc0 p6-sc0 p6-ls0 p6-ws0">Grass<span class="p6_ p6_0"> </span><span class="p6-ls1">Water<span class="p6_ p6_1"> </span><span class="p6-ls2">Autumn<span class="p6_ p6_2"> </span><span class="p6-ls3">Rock<span class="p6_ p6_3"> </span></span></span></span>Dim<span class="p6_ p6_4"> </span><span class="p6-ls1">Winte<span class="p6_ p6_5"></span>r<span class="p6_ p6_6"> </span><span class="p6-ls4">Indoor<span class="p6_ p6_0"> </span>Sa<span class="p6_ p6_5"></span>nd<span class="p6_ p6_7"> </span><span class="p6-ls0">Dark<span class="p6_ p6_8"> </span><span class="p6-ls5">Outdoor</span></span></span></span></div></div><div class="p6-pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+      </div>
 
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <center>
+              Fig 6. NICO++ [4]. Drawback: Not comprehensive (Background), Attribute Overlap (Rock vs Outdoor)
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <p>
+              To solve this issue, we introduce a class-, dimension-, attribute-, and subpopulation-layer structure.
+              By articulating the classification dimensions, this improved structure provides more nuanced attribute assignments.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="auto-resize-pdf" ori-width="836.27" ori-height="283.55">
+        <div id="p7-pf1" class="p7-pf p7-w0 p7-h0" data-page-no="1"><div class="p7-pc p7-pc1 p7-w0 p7-h0"><img class="p7-bi p7-x0 p7-y0 p7-w1 p7-h1" alt="" src="images/p7.png"/><div class="p7-c p7-x0 p7-y0 p7-w2 p7-h0"><div class="p7-t p7-m0 p7-x1 p7-h2 p7-y1 p7-ff1 p7-fs0 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Subpop<span class="p7_ p7_0"></span>ulations</div><div class="p7-t p7-m0 p7-x2 p7-h3 p7-y2 p7-ff2 p7-fs1 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Ours</div><div class="p7-t p7-m0 p7-x3 p7-h2 p7-y3 p7-ff1 p7-fs0 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Attributes</div><div class="p7-t p7-m0 p7-x4 p7-h2 p7-y4 p7-ff1 p7-fs0 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Class</div><div class="p7-t p7-m0 p7-x5 p7-h4 p7-y5 p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Object</div><div class="p7-t p7-m0 p7-x6 p7-h4 p7-y6 p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Location</div><div class="p7-t p7-m0 p7-x7 p7-h4 p7-y7 p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Swim<span class="p7_ p7_1"></span>ming</div><div class="p7-t p7-m0 p7-x8 p7-h4 p7-y8 p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Surfing</div><div class="p7-t p7-m0 p7-x9 p7-h4 p7-y9 p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Sitting</div><div class="p7-t p7-m0 p7-xa p7-h4 p7-ya p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Surfboard</div><div class="p7-t p7-m0 p7-xb p7-h4 p7-yb p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Table</div><div class="p7-t p7-m0 p7-xc p7-h4 p7-yc p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Rope</div><div class="p7-t p7-m0 p7-xd p7-h5 p7-yd p7-ff1 p7-fs3 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Water</div><div class="p7-t p7-m0 p7-xe p7-h4 p7-ye p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Snow</div><div class="p7-t p7-m0 p7-xf p7-h4 p7-yf p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Grass</div><div class="p7-t p7-m0 p7-x10 p7-h2 p7-y10 p7-ff1 p7-fs0 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Dime<span class="p7_ p7_1"></span>nsion<span class="p7_ p7_0"></span>s</div><div class="p7-t p7-m0 p7-x11 p7-h4 p7-y11 p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Dog</div><div class="p7-t p7-m0 p7-x12 p7-h4 p7-y12 p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Action</div><div class="p7-t p7-m0 p7-x13 p7-h6 p7-y13 p7-ff2 p7-fs4 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Baseline</div><div class="p7-t p7-m0 p7-x14 p7-h7 p7-y14 p7-ff2 p7-fs0 p7-fc0 p7-sc0 p7-ls0 p7-ws0">[Dog-Surfbo<span class="p7_ p7_0"></span>ard] or [Do<span class="p7_ p7_0"></span>g-Water]</div><div class="p7-t p7-m0 p7-x15 p7-h4 p7-y15 p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Dog -Surfboard</div><div class="p7-t p7-m0 p7-x16 p7-h4 p7-y16 p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Dog-Water</div><div class="p7-t p7-m0 p7-x17 p7-h8 p7-y17 p7-ff2 p7-fs5 p7-fc0 p7-sc0 p7-ls0 p7-ws0">[Dog, -Objec<span class="p7_ p7_1"></span>t-Surfboa<span class="p7_ p7_0"></span>rd, -Location-Water, -Action-Surfing]</div><div class="p7-t p7-m0 p7-x18 p7-h9 p7-y18 p7-ff3 p7-fs6 p7-fc1 p7-sc1 p7-ls0 p7-ws0">？</div><div class="p7-t p7-m0 p7-x19 p7-ha p7-y19 p7-ff4 p7-fs6 p7-fc1 p7-sc0 p7-ls0 p7-ws0">√</div><div class="p7-t p7-m0 p7-x1a p7-h4 p7-y1a p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Dog</div><div class="p7-t p7-m0 p7-x1b p7-h4 p7-y1b p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Dog -Grass</div><div class="p7-t p7-m0 p7-x1c p7-hb p7-y1c p7-ff1 p7-fs7 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Surfboard</div><div class="p7-t p7-m0 p7-x1d p7-hb p7-y1d p7-ff1 p7-fs7 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Grass</div><div class="p7-t p7-m0 p7-x1e p7-h4 p7-y1e p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Attributes</div><div class="p7-t p7-m0 p7-x1f p7-h4 p7-y1f p7-ff1 p7-fs2 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Class</div><div class="p7-t p7-m0 p7-x20 p7-hb p7-y20 p7-ff1 p7-fs7 p7-fc0 p7-sc0 p7-ls0 p7-ws0">Water</div></div></div><div class="p7-pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <center>
+              Fig 7. Metashift has the same-level attributes Surfboard, Water, and Grass for class Dog, which is irrational due to the possible overlap.
+              As an improvement, we take dimensions into consideration. The class Dog has dimensions including Action, Co-occurrence Object, Location, etc., and in dimension Location, it includes various attributes like Water, Grass, etc, which offers a more appropriate assignment for the samples.
+            </center>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </section>
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>

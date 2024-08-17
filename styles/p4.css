@@ -12,10 +12,10 @@
 
 
  .p4-ff0{font-family:sans-serif;visibility:hidden;}
-@font-face{font-family:p4-ff1;src:url(f1.woff)format("woff");}.p4-ff1{font-family:p4-ff1;line-height:1.334000;font-style:normal;font-weight:normal;visibility:visible;}
-@font-face{font-family:p4-ff2;src:url(f2.woff)format("woff");}.p4-ff2{font-family:p4-ff2;line-height:1.385000;font-style:normal;font-weight:normal;visibility:visible;}
-@font-face{font-family:p4-ff3;src:url(f3.woff)format("woff");}.p4-ff3{font-family:p4-ff3;line-height:0.855469;font-style:normal;font-weight:normal;visibility:visible;}
-@font-face{font-family:p4-ff4;src:url(f4.woff)format("woff");}.p4-ff4{font-family:p4-ff4;line-height:0.914062;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:p4-ff1;src:url(../fonts/p4_f1.woff)format("woff");}.p4-ff1{font-family:p4-ff1;line-height:1.334000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:p4-ff2;src:url(../fonts/p4_f2.woff)format("woff");}.p4-ff2{font-family:p4-ff2;line-height:1.385000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:p4-ff3;src:url(../fonts/p4_f3.woff)format("woff");}.p4-ff3{font-family:p4-ff3;line-height:0.855469;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:p4-ff4;src:url(../fonts/p4_f4.woff)format("woff");}.p4-ff4{font-family:p4-ff4;line-height:0.914062;font-style:normal;font-weight:normal;visibility:visible;}
 .p4-m1{transform:matrix(0.000000,-0.250000,0.250000,0.000000,0,0);-ms-transform:matrix(0.000000,-0.250000,0.250000,0.000000,0,0);-webkit-transform:matrix(0.000000,-0.250000,0.250000,0.000000,0,0);}
 .p4-m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
 .p4-v0{vertical-align:0.000000px;}
