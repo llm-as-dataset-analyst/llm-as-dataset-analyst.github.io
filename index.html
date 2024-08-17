@@ -836,67 +836,69 @@
           </div>
         </div>
       </div>
-      <table style="border: solid #000000; border-collapse: collapse; border-width: 1px 0 1px 0; width: 100%;" cellspacing="0" cellpadding="5">
-        <caption class="caption">Table 1: Quantitative results of Dataset Subpopulation Organization.</caption>
-        <thead>
-          <tr>
-            <th>Dataset</th>
-            <th>Criterion</th>
-            <th>SCAN*</th>
-            <th>IC|TC</th>
-            <th>Ours</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-top: solid 1px black;">
-            <td rowspan="3">Stanford 40 Action</td>
-            <td>Action</td>
-            <td>0.346</td>
-            <td>0.747</td>
-            <td><strong>0.817</strong></td>
-          </tr>
-          <tr>
-            <td>Location</td>
-            <td>0.357</td>
-            <td>0.671</td>
-            <td><strong>0.705</strong></td>
-          </tr>
-          <tr>
-            <td>Mood</td>
-            <td>0.276</td>
-            <td>0.746</td>
-            <td><strong>0.768</strong></td>
-          </tr>
-          <tr style="border-top: solid 1px black;">
-            <td>Place365</td>
-            <td>Place</td>
-            <td>0.332</td>
-            <td>-</td>
-            <td><strong>0.696</strong></td>
-          </tr>
-          <tr style="border-top: solid 1px black;">
-            <td>PPMI</td>
-            <td>Musical Instruction</td>
-            <td>0.598</td>
-            <td>0.934</td>
-            <td><strong>0.955</strong></td>
-          </tr>
-          <tr style="border-top: solid 1px black;">
-            <td>Cifar10</td>
-            <td>Object</td>
-            <td>0.839</td>
-            <td>0.911</td>
-            <td><strong>0.921</strong></td>
-          </tr>
-          <tr style="border-top: solid 1px black;">
-            <td>STL10</td>
-            <td>Object</td>
-            <td>0.798</td>
-            <td>0.986</td>
-            <td><strong>0.988</strong></td>
-          </tr>
-        </tbody>
-      </table>
+      <div style="overflow-x: auto;">
+        <table style="border: solid #000000; border-collapse: collapse; border-width: 1px 0 1px 0; width: 100%; min-width: 500px;" cellspacing="0" cellpadding="5">
+          <caption class="caption">Table 1: Quantitative results of Dataset Subpopulation Organization.</caption>
+          <thead>
+            <tr>
+              <th>Dataset</th>
+              <th>Criterion</th>
+              <th>SCAN*</th>
+              <th>IC|TC</th>
+              <th>Ours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-top: solid 1px black;">
+              <td rowspan="3">Stanford 40 Action</td>
+              <td>Action</td>
+              <td>0.346</td>
+              <td>0.747</td>
+              <td><strong>0.817</strong></td>
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td>0.357</td>
+              <td>0.671</td>
+              <td><strong>0.705</strong></td>
+            </tr>
+            <tr>
+              <td>Mood</td>
+              <td>0.276</td>
+              <td>0.746</td>
+              <td><strong>0.768</strong></td>
+            </tr>
+            <tr style="border-top: solid 1px black;">
+              <td>Place365</td>
+              <td>Place</td>
+              <td>0.332</td>
+              <td>-</td>
+              <td><strong>0.696</strong></td>
+            </tr>
+            <tr style="border-top: solid 1px black;">
+              <td>PPMI</td>
+              <td>Musical Instruction</td>
+              <td>0.598</td>
+              <td>0.934</td>
+              <td><strong>0.955</strong></td>
+            </tr>
+            <tr style="border-top: solid 1px black;">
+              <td>Cifar10</td>
+              <td>Object</td>
+              <td>0.839</td>
+              <td>0.911</td>
+              <td><strong>0.921</strong></td>
+            </tr>
+            <tr style="border-top: solid 1px black;">
+              <td>STL10</td>
+              <td>Object</td>
+              <td>0.798</td>
+              <td>0.986</td>
+              <td><strong>0.988</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
@@ -906,211 +908,213 @@
           </div>
         </div>
       </div>
-      <table cellpadding="10" cellspacing="0" style="width:100%; border: solid #000000; border-collapse: collapse; border-width: 1px 0 1px 0; text-align:center;">
-        <caption class="caption"> Table 2: Comparison of methods for image classification with subpopulation shifts. </caption>
-        <thead>
-            <tr>
-                <th rowspan="2">Type</th>
-                <th rowspan="2">Method</th>
-                <th colspan="4">Average Accuracy</th>
-                <th colspan="4">Worst Group Accuracy</th>
-            </tr>
-            <tr style="border-top: solid 1px black;">
-                <th>Waterbirds</th>
-                <th>Metashift</th>
-                <th>Nico++</th>
-                <th>Average</th>
-                <th>Waterbirds</th>
-                <th>Metashift</th>
-                <th>Nico++</th>
-                <th>Average</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr style="border-top: solid 1px black;">
-                <td>Vanilla</td>
-                <td>ERM</td>
-                <td>84.1</td>
-                <td>91.2</td>
-                <td>76.3</td>
-                <td>83.7</td>
-                <td>69.1</td>
-                <td>82.1</td>
-                <td>17.8</td>
-                <td>56.3</td>
-            </tr>
-            <tr style="border-top: solid 1px black;">
-                <td rowspan="4">Subgroup Robust Methods</td>
-                <td>GroupDRO</td>
-                <td>86.9</td>
-                <td>91.5</td>
-                <td>74.0</td>
-                <td>84.1</td>
-                <td>73.1</td>
-                <td>83.1</td>
-                <td>12.2</td>
-                <td>56.1</td>
-            </tr>
-            <tr>
-                <td>JTT</td>
-                <td>88.9</td>
-                <td>91.2</td>
-                <td>77.5</td>
-                <td>85.9</td>
-                <td>71.2</td>
-                <td>82.6</td>
-                <td>15.6</td>
-                <td>56.5</td>
-            </tr>
-            <tr>
-                <td>LfF</td>
-                <td>86.6</td>
-                <td>80.4</td>
-                <td>77.5</td>
-                <td>81.5</td>
-                <td>75.0</td>
-                <td>72.3</td>
-                <td>15.6</td>
-                <td>54.3</td>
-            </tr>
-            <tr>
-                <td>LISA</td>
-                <td>89.2</td>
-                <td>91.4</td>
-                <td>75.0</td>
-                <td>85.2</td>
-                <td>77.0</td>
-                <td>79.0</td>
-                <td>18.9</td>
-                <td>58.3</td>
-            </tr>
-            <tr style="border-top: solid 1px black;">
-                <td rowspan="5">Imbalanced Learning</td>
-                <td>Resample</td>
-                <td>86.2</td>
-                <td><u>92.2</u></td>
-                <td>77.3</td>
-                <td>85.2</td>
-                <td>70.0</td>
-                <td>81.0</td>
-                <td>16.7</td>
-                <td>55.9</td>
-            </tr>
-            <tr>
-                <td>Reweight</td>
-                <td>86.2</td>
-                <td>91.5</td>
-                <td>73.8</td>
-                <td>83.8</td>
-                <td>71.9</td>
-                <td>83.1</td>
-                <td>12.2</td>
-                <td>55.7</td>
-            </tr>
-            <tr>
-                <td>Focal</td>
-                <td><u>89.3</u></td>
-                <td>91.6</td>
-                <td>73.1</td>
-                <td>84.7</td>
-                <td>71.6</td>
-                <td>81.0</td>
-                <td>16.7</td>
-                <td>56.4</td>
-            </tr>
-            <tr>
-                <td>CBLoss</td>
-                <td>86.8</td>
-                <td>91.4</td>
-                <td>76.3</td>
-                <td>84.8</td>
-                <td>74.4</td>
-                <td>83.1</td>
-                <td>12.2</td>
-                <td>56.6</td>
-            </tr>
-            <tr>
-                <td>BSoftmax</td>
-                <td>88.4</td>
-                <td>91.3</td>
-                <td>74.2</td>
-                <td>84.6</td>
-                <td>74.1</td>
-                <td>82.6</td>
-                <td>16.7</td>
-                <td>57.8</td>
-            </tr>
-            <tr style="border-top: solid 1px black;">
-                <td rowspan="2">Traditional Data Augmentation</td>
-                <td>Mixup</td>
-                <td>89.2</td>
-                <td>91.4</td>
-                <td>73.0</td>
-                <td>84.5</td>
-                <td><u>77.5</u></td>
-                <td>79.0</td>
-                <td>14.4</td>
-                <td>57.0</td>
-            </tr>
-            <tr>
-                <td>RandAug</td>
-                <td>86.3</td>
-                <td>90.9</td>
-                <td>72.0</td>
-                <td>83.1</td>
-                <td>71.4</td>
-                <td>80.9</td>
-                <td>16.7</td>
-                <td>56.3</td>
-            </tr>
-            <tr style="border-top: solid 1px black;">
-                <td rowspan="3">Diffusion</td>
-                <td>Class Prompt</td>
-                <td>85.9</td>
-                <td>91.5</td>
-                <td>78.0</td>
-                <td>85.1</td>
-                <td>71.3</td>
-                <td>82.7</td>
-                <td>18.5</td>
-                <td>57.5</td>
-            </tr>
-            <tr>
-                <td>Class-Attribute</td>
-                <td>89.1</td>
-                <td>91.4</td>
-                <td><u>78.6</u></td>
-                <td><u>86.4</u></td>
-                <td>73.5</td>
-                <td><u>83.8</u></td>
-                <td>18.8</td>
-                <td><u>58.7</u></td>
-            </tr>
-            <tr>
-                <td>CiP</td>
-                <td>88.0</td>
-                <td>91.1</td>
-                <td>78.3</td>
-                <td>85.8</td>
-                <td>73.5</td>
-                <td>82.4</td>
-                <td><u>19.3</u></td>
-                <td>58.4</td>
-            </tr>
-            <tr style="border-top: solid 1px black;">
-                <td>LLM+Diffusion</td>
-                <td><b>SSD-LLM (Ours)</b></td>
-                <td><b>90.5</b></td>
-                <td><b>93.0</b></td>
-                <td><b>80.4</b></td>
-                <td><b>88.0</b></td>
-                <td><b>79.1</b></td>
-                <td><b>84.8</b></td>
-                <td><b>22.1</b></td>
-                <td><b>62.0</b></td>
-            </tr>
-        </tbody>
-      </table>
+      <div style="overflow-x: auto;">
+        <table cellpadding="10" cellspacing="0" style="width:100%; border: solid #000000; border-collapse: collapse; border-width: 1px 0 1px 0; text-align:center; min-width: 600px">
+          <caption class="caption"> Table 2: Comparison of methods for image classification with subpopulation shifts. </caption>
+          <thead>
+              <tr>
+                  <th rowspan="2">Type</th>
+                  <th rowspan="2">Method</th>
+                  <th colspan="4">Average Accuracy</th>
+                  <th colspan="4">Worst Group Accuracy</th>
+              </tr>
+              <tr style="border-top: solid 1px black;">
+                  <th>Waterbirds</th>
+                  <th>Metashift</th>
+                  <th>Nico++</th>
+                  <th>Average</th>
+                  <th>Waterbirds</th>
+                  <th>Metashift</th>
+                  <th>Nico++</th>
+                  <th>Average</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr style="border-top: solid 1px black;">
+                  <td>Vanilla</td>
+                  <td>ERM</td>
+                  <td>84.1</td>
+                  <td>91.2</td>
+                  <td>76.3</td>
+                  <td>83.7</td>
+                  <td>69.1</td>
+                  <td>82.1</td>
+                  <td>17.8</td>
+                  <td>56.3</td>
+              </tr>
+              <tr style="border-top: solid 1px black;">
+                  <td rowspan="4">Subgroup Robust Methods</td>
+                  <td>GroupDRO</td>
+                  <td>86.9</td>
+                  <td>91.5</td>
+                  <td>74.0</td>
+                  <td>84.1</td>
+                  <td>73.1</td>
+                  <td>83.1</td>
+                  <td>12.2</td>
+                  <td>56.1</td>
+              </tr>
+              <tr>
+                  <td>JTT</td>
+                  <td>88.9</td>
+                  <td>91.2</td>
+                  <td>77.5</td>
+                  <td>85.9</td>
+                  <td>71.2</td>
+                  <td>82.6</td>
+                  <td>15.6</td>
+                  <td>56.5</td>
+              </tr>
+              <tr>
+                  <td>LfF</td>
+                  <td>86.6</td>
+                  <td>80.4</td>
+                  <td>77.5</td>
+                  <td>81.5</td>
+                  <td>75.0</td>
+                  <td>72.3</td>
+                  <td>15.6</td>
+                  <td>54.3</td>
+              </tr>
+              <tr>
+                  <td>LISA</td>
+                  <td>89.2</td>
+                  <td>91.4</td>
+                  <td>75.0</td>
+                  <td>85.2</td>
+                  <td>77.0</td>
+                  <td>79.0</td>
+                  <td>18.9</td>
+                  <td>58.3</td>
+              </tr>
+              <tr style="border-top: solid 1px black;">
+                  <td rowspan="5">Imbalanced Learning</td>
+                  <td>Resample</td>
+                  <td>86.2</td>
+                  <td><u>92.2</u></td>
+                  <td>77.3</td>
+                  <td>85.2</td>
+                  <td>70.0</td>
+                  <td>81.0</td>
+                  <td>16.7</td>
+                  <td>55.9</td>
+              </tr>
+              <tr>
+                  <td>Reweight</td>
+                  <td>86.2</td>
+                  <td>91.5</td>
+                  <td>73.8</td>
+                  <td>83.8</td>
+                  <td>71.9</td>
+                  <td>83.1</td>
+                  <td>12.2</td>
+                  <td>55.7</td>
+              </tr>
+              <tr>
+                  <td>Focal</td>
+                  <td><u>89.3</u></td>
+                  <td>91.6</td>
+                  <td>73.1</td>
+                  <td>84.7</td>
+                  <td>71.6</td>
+                  <td>81.0</td>
+                  <td>16.7</td>
+                  <td>56.4</td>
+              </tr>
+              <tr>
+                  <td>CBLoss</td>
+                  <td>86.8</td>
+                  <td>91.4</td>
+                  <td>76.3</td>
+                  <td>84.8</td>
+                  <td>74.4</td>
+                  <td>83.1</td>
+                  <td>12.2</td>
+                  <td>56.6</td>
+              </tr>
+              <tr>
+                  <td>BSoftmax</td>
+                  <td>88.4</td>
+                  <td>91.3</td>
+                  <td>74.2</td>
+                  <td>84.6</td>
+                  <td>74.1</td>
+                  <td>82.6</td>
+                  <td>16.7</td>
+                  <td>57.8</td>
+              </tr>
+              <tr style="border-top: solid 1px black;">
+                  <td rowspan="2">Traditional Data Augmentation</td>
+                  <td>Mixup</td>
+                  <td>89.2</td>
+                  <td>91.4</td>
+                  <td>73.0</td>
+                  <td>84.5</td>
+                  <td><u>77.5</u></td>
+                  <td>79.0</td>
+                  <td>14.4</td>
+                  <td>57.0</td>
+              </tr>
+              <tr>
+                  <td>RandAug</td>
+                  <td>86.3</td>
+                  <td>90.9</td>
+                  <td>72.0</td>
+                  <td>83.1</td>
+                  <td>71.4</td>
+                  <td>80.9</td>
+                  <td>16.7</td>
+                  <td>56.3</td>
+              </tr>
+              <tr style="border-top: solid 1px black;">
+                  <td rowspan="3">Diffusion</td>
+                  <td>Class Prompt</td>
+                  <td>85.9</td>
+                  <td>91.5</td>
+                  <td>78.0</td>
+                  <td>85.1</td>
+                  <td>71.3</td>
+                  <td>82.7</td>
+                  <td>18.5</td>
+                  <td>57.5</td>
+              </tr>
+              <tr>
+                  <td>Class-Attribute</td>
+                  <td>89.1</td>
+                  <td>91.4</td>
+                  <td><u>78.6</u></td>
+                  <td><u>86.4</u></td>
+                  <td>73.5</td>
+                  <td><u>83.8</u></td>
+                  <td>18.8</td>
+                  <td><u>58.7</u></td>
+              </tr>
+              <tr>
+                  <td>CiP</td>
+                  <td>88.0</td>
+                  <td>91.1</td>
+                  <td>78.3</td>
+                  <td>85.8</td>
+                  <td>73.5</td>
+                  <td>82.4</td>
+                  <td><u>19.3</u></td>
+                  <td>58.4</td>
+              </tr>
+              <tr style="border-top: solid 1px black;">
+                  <td>LLM+Diffusion</td>
+                  <td><b>SSD-LLM (Ours)</b></td>
+                  <td><b>90.5</b></td>
+                  <td><b>93.0</b></td>
+                  <td><b>80.4</b></td>
+                  <td><b>88.0</b></td>
+                  <td><b>79.1</b></td>
+                  <td><b>84.8</b></td>
+                  <td><b>22.1</b></td>
+                  <td><b>62.0</b></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
@@ -1120,7 +1124,8 @@
           </div>
         </div>
       </div>
-      <table cellspacing="0" cellpadding="5" style="width:100%; border: solid #000000; border-collapse: collapse; border-width: 1px 0 1px 0;">
+      <div style="overflow-x: auto;">
+      <table cellspacing="0" cellpadding="5" style="width:100%; border: solid #000000; border-collapse: collapse; border-width: 1px 0 1px 0; min-width: 600px;">
         <caption class="caption">Table 3: Results of slice discovery on Imagenet-1K with various SDMs.</caption>
         <thead>
             <tr>
@@ -1197,6 +1202,7 @@
             </tr>
         </tbody>
       </table>
+    </div>
     
     </div>
   </section>
