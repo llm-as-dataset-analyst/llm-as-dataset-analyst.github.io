@@ -72,9 +72,13 @@
   .auto-resize-pdf{
     z-index: -1;
   }
+
+  body{
+    font-size: 1.2rem
+  }
+
   .caption{
     color:gray;
-    text-align: center;
   }
   .expandable-card .card-text-container {
     max-height: 200px;
@@ -177,6 +181,8 @@
   table td,table th {
     vertical-align: middle
   }
+
+
   
 </style>
 
@@ -196,7 +202,7 @@
 
 
               <span class="author-block">
-                <a href="">Yulin Luo<sup>1*</sup></a>,
+                <a href="https://scholar.google.com/citations?user=SgeV4NkAAAAJ">Yulin Luo<sup>1*</sup></a>,
               </span>
 
 
@@ -206,15 +212,15 @@
 
 
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/bocheng-zou/">Bocheng Zou<sup>1,3</sup></a>,
+                <a href="https://www.bocheng.me/">Bocheng Zou<sup>1,3</sup></a>,
               </span>
 
               <span class="author-block">
-                <a href="">Yiming Tang<sup>1,4</sup></a>,
+                <a href="https://scholar.google.com/citations?user=0WYAYQ8AAAAJ">Yiming Tang<sup>1,4</sup></a>,
               </span>
 
               <span class="author-block">
-                <a href="">Jiaming Liu<sup>1</sup></a>,
+                <a href="https://liujiaming1996.github.io/">Jiaming Liu<sup>1</sup></a>,
               </span>
 
 
@@ -275,11 +281,11 @@
   
         <div class="column is-full-width">
           <div class="content has-text-justified">
-            <center class="caption">
+            <p class="caption">
               Fig 1: (A) The Workflow of Subpopulation Structure Discovery with Large Language Models (SSD-LLM).
               SSD-LLM can further support several downstream tasks including: (B) Dataset Subpopulation Organization;
               (C) Subpopulation Shift; (D) Slice discovery
-            </center>
+            </p>
           </div>
         </div>
       </div>
@@ -303,7 +309,7 @@
           <div class="content has-text-justified">
             <p>
               🔥 Large language models can be served as <font style="color:#ff0000; font-weight: bold;"> dataset
-                analysts </font>. We can utilize their extensive world knowledge and summarization capabilities to
+                analysts</font>. We can utilize their extensive world knowledge and summarization capabilities to
               extract valuable insights from massive information, which can be beneficial to model training.
             </p>
             <p>
@@ -379,7 +385,7 @@
               What's the subpopulation?
             </h3>
             <p>
-              Subpopulation is defined by a set of data points that share common characteristics. [2]
+              Subpopulation is defined by a set of data points that share common characteristics [2].
               For example, for class "Cat", the black cat and the white cat can be seen as different subpopulation.
             </p>
             <h3>
@@ -543,10 +549,10 @@
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
-            <center class="caption">
+            <p class="caption">
               Fig 3. Different types of subpopulation shift [2], which occurs when the proportion of some subpopulations
               between training and deployment changes, and is shown to be of significant influence to model performances
-            </center>
+            </p>
           </div>
         </div>
       </div>
@@ -568,10 +574,10 @@
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
-            <center class="caption">
+            <p class="caption">
               Fig 4. An overview of the typical process for slice discovery, which aims at identifying subpopulation
-              where the model underperforms. [7]
-            </center>
+              where the model underperforms [7].
+            </p>
           </div>
         </div>
       </div>
@@ -701,10 +707,10 @@
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
-            <center class="caption">
+            <p class="caption">
               Fig 7. Metashift has the same-level attributes Surfboard, Water, and Grass for class Dog, which is irrational due to the possible overlap.
               As an improvement, we take dimensions into consideration. The class Dog has dimensions including Action, Co-occurrence Object, Location, etc., and in dimension Location, it includes various attributes like Water, Grass, etc, which offers a more appropriate assignment for the samples.
-            </center>
+            </p>
           </div>
         </div>
       </div>
@@ -738,9 +744,9 @@
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
-            <center class="caption">
+            <p class="caption">
               Fig 8: Subpopulation Structure Discovery with Large Language Model (SSD-LLM). (Step 1) Multimodality Large Language Model (MLLM) extracts informative captions from images. (Step 2) LLM initializes the criteria with a sample-based generate-and-select paradigm. (Step 3) LLM refines the criteria using self-consistency as an indicator. (Step 4) LLM assigns each caption with specific attributes according to the refined criteria, uncovering the intrinsic subpopulation structures hidden in the dataset. The resulting criteria and subpopulations are used in several downstream tasks. 
-            </center>
+            </p>
           </div>
         </div>
       </div>
@@ -794,9 +800,9 @@
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
-            <center class="caption">
+            <p class="caption">
               Fig 10. Subpopulation Shift. We balance classes and attributes by generating images for underrepresented subpopulations using a diffusion model, which enhances the model's performance on long-tail distributions.
-            </center>
+            </p>
           </div>
         </div>
       </div>
@@ -820,9 +826,9 @@
       <div class="columns is-centered">
         <div class="column is-full-width">
           <div class="content has-text-justified">
-            <center class="caption">
+            <p class="caption">
               Fig 11. Slice Discovery. Subpopulation in the validation set with higher error rate will be identified as the recommend slice topic.
-            </center>
+            </p>
           </div>
         </div>
       </div>
@@ -873,7 +879,7 @@
       </div>
       <div style="overflow-x: auto;">
         <table style="border: solid #000000; border-collapse: collapse; border-width: 1px 0 1px 0; width: 100%; min-width: 500px; text-align:center;" cellspacing="0" cellpadding="5">
-          <caption class="caption">Table 1: Quantitative results of Dataset Subpopulation Organization.</caption>
+          <caption class="caption" style="text-align: center;">Table 1: Quantitative results of Dataset Subpopulation Organization.</caption>
           <thead>
             <tr>
               <th>Dataset</th>
@@ -945,7 +951,7 @@
       </div>
       <div style="overflow-x: auto;">
         <table cellpadding="10" cellspacing="0" style="width:100%; border: solid #000000; border-collapse: collapse; border-width: 1px 0 1px 0; text-align:center; min-width: 600px">
-          <caption class="caption"> Table 2: Comparison of methods for image classification with subpopulation shifts. </caption>
+          <caption class="caption" style="text-align: center;"> Table 2: Comparison of methods for image classification with subpopulation shifts. </caption>
           <thead>
               <tr>
                   <th rowspan="2">Type</th>
@@ -1161,7 +1167,7 @@
       </div>
       <div style="overflow-x: auto;">
       <table cellspacing="0" cellpadding="5" style="width:100%; border: solid #000000; border-collapse: collapse; border-width: 1px 0 1px 0; min-width: 600px; text-align:center;">
-        <caption class="caption">Table 3: Results of slice discovery on Imagenet-1K with various SDMs.</caption>
+        <caption class="caption" style="text-align: center;">Table 3: Results of slice discovery on Imagenet-1K with various SDMs. The evaluation pipeline is developed based on AdaVision [6] and has been improved into an automated version.</caption>
         <thead>
             <tr>
                 <th>Method|Categories</th>
